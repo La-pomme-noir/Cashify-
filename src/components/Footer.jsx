@@ -18,7 +18,7 @@ const Footer = () => {
             Noticias
           </Link>
           <Link to="/qanda" className="footer__enlaces">
-            Preguntas y Respuestas
+            Foro Financiero
           </Link>
           <Link to="/myspace" className="footer__enlaces">
             Mi Espacio

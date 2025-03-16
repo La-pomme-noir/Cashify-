@@ -1,14 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/global.css';
 
 const Navbar = () => {
-  const [showSubmenu, setShowSubmenu] = useState(false);
+  useEffect(() => {
+    // Función para alternar el submenú
+    const toggleSubmenu = (event) => {
+      event.preventDefault();
+      const submenu = event.currentTarget.nextElementSibling;
+      submenu.classList.toggle('activo');
+    };
 
-  const toggleSubmenu = (e) => {
-    e.preventDefault();
-    setShowSubmenu(!showSubmenu);
-  };
+    // Función para cerrar el submenú al hacer clic fuera
+    const closeSubmenuOnClickOutside = (event) => {
+      const submenu = document.querySelector('.navegacion__submenu--contenido');
+      const toggleLink = document.querySelector('.navegacion__submenu .navegacion__enlaces');
+
+      if (submenu && toggleLink && !toggleLink.contains(event.target) && !submenu.contains(event.target)) {
+        submenu.classList.remove('activo');
+      }
+    };
+
+    // Seleccionamos el enlace del submenú y le añadimos el evento de click
+    const submenuToggle = document.querySelector('.navegacion__submenu .navegacion__enlaces');
+    if (submenuToggle) {
+      submenuToggle.addEventListener('click', toggleSubmenu);
+    }
+
+    document.addEventListener('click', closeSubmenuOnClickOutside);
+
+    // Cleanup: eliminar eventos cuando el componente se desmonta
+    return () => {
+      if (submenuToggle) {
+        submenuToggle.removeEventListener('click', toggleSubmenu);
+      }
+      document.removeEventListener('click', closeSubmenuOnClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="navegacion">
@@ -16,12 +44,12 @@ const Navbar = () => {
         Inicio
       </Link>
 
-      {/* Menú Noticias con submenú */}
+      {/* Menú Noticias con Submenú */}
       <div className="navegacion__submenu">
-        <a href="#" className="navegacion__enlaces" onClick={toggleSubmenu}>
+        <a href="#" className="navegacion__enlaces">
           Noticias <i className="bi bi-arrow-down-short"></i>
         </a>
-        <div className={`navegacion__submenu--contenido ${showSubmenu ? 'show' : ''}`}>
+        <div className="navegacion__submenu--contenido">
           <Link to="/news">Todo</Link>
           <Link to="/news/articles">Artículos</Link>
           <Link to="/news/tips">Consejos</Link>
@@ -29,7 +57,7 @@ const Navbar = () => {
       </div>
 
       <Link to="/qanda" className="navegacion__enlaces">
-        Preguntas y Respuestas
+        Foro Financiero
       </Link>
       <Link to="/myspace" className="navegacion__enlaces">
         Mi Espacio

@@ -1,24 +1,17 @@
 import React from 'react';
+import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Carousel from '../../components/Carousel/Carousel';
-import AboutUs from '../../components/AboutUs/AboutUs';
-import Services from '../../components/Services/Services';
-import Contact from '../../components/Contact/Contact';
+import Carousel from '../components/Carousel';
+import AboutUs from '../components/AboutUs';
+import Services from '../components/Services';
+import Contact from '../components/Contact';
 import '../styles/style-home.css';
 
-const Home = () => {
+export const Home = () => {
   return (
     <div>
-      <header className="header">
-        <a href="/">
-          <img
-            className="header__logo header__logo--animacion"
-            src="/images/logoCashify10.png"
-            alt="Logo Cashify"
-          />
-        </a>
-      </header>
+      <Header />
 
       <Navbar />
 

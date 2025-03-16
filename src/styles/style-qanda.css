@@ -1,0 +1,99 @@
+@import url('global.css');
+@import url('normalize.css');
+
+/* Hero Foro */
+.bg__foro {
+    background-image: url("../../../public/images/bg-foro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+/* Scrollspy */
+.navbar__finanzas {
+    background-color: var(--emerald);
+    border-radius: .5rem;
+}
+.navbar__links {
+    color: var(--black);
+}
+.navbar__links:hover {
+    color: var(--platinum);
+}
+.shadow__cards-rules {
+    background-color: var(--platinum);
+}
+.scrollspy__li {
+    list-style: none;
+}
+.scrollspy__span {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    margin: 1rem;
+    font-size: 2rem;
+}
+.scrollspy__span-reglas {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+/* Foro */
+.foro__question {
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .foro__question {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.foro__icon {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.foro__txt {
+    display: block;
+    padding: 7rem;
+    width: 100%;
+    border-radius: .5rem;
+}
+@media (min-width: 768px) {
+    .foro__txt {
+        padding: 10rem;
+    }
+}
+.foro__button {
+    background-color: var(--black);
+    color: var(--platinum);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
+.foro__button:hover {
+    transform: scale(1.2);
+    transition: .3s;
+}
+.cards__parrafo {
+    text-align: center;
+}
+.cards__span {
+    font-weight: bold;
+}
+/* Preguntas Frecuentes */
+.accordion__title {
+    font-size: 2.5rem;
+    margin: 2rem auto;
+}
+@media (min-width: 768px) {
+    .accordion__title {
+        font-size: 3.5rem;
+    }
+}
+.accordion__button {
+    font-size: 2rem;
+    border-radius: .5rem;
+    background-color: var(--platinum);
+}

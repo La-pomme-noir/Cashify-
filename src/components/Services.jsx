@@ -22,7 +22,7 @@ const Services = () => {
         <div className="services__cards">
           <img src="/gifs/finanzasblog.gif" alt="Preguntas y Respuestas" />
           <Link to="/qanda">
-            <h3 className="services__title">Preguntas y Respuestas</h3>
+            <h3 className="services__title">Foro Financiero</h3>
           </Link>
           <p className="services__parrafo">
             Únete a una comunidad dinámica de usuarios apasionados por las finanzas.
