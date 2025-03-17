@@ -2,7 +2,7 @@ import React from 'react';
 
 const MarketUpdates = () => {
   return (
-    <>
+    <section id='articulos'>
     <h2 className="titles-sections">Actualizaciones del Mercado</h2>
     <div id="carouselTarjetasMercado" className="carousel slide" data-bs-ride="carousel">
       <button
@@ -143,7 +143,7 @@ const MarketUpdates = () => {
         </div> {/*Fin tendencias__item */}
       </div> {/*Fin tendencias */}
     </div> {/*Fin carousel__slide */}
-    </>
+    </section>
   );
 };
 

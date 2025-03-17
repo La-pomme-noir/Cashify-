@@ -3,7 +3,7 @@
 
 /* Hero Foro */
 .bg__foro {
-    background-image: url("../../../public/images/bg-foro.jpg");
+    background-image: url("../assets/images/bg-foro.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -74,7 +74,7 @@
     color: var(--platinum);
 }
 .login__image {
-    background-image: url("../../../public/gifs/login.gif");
+    background-image: url("../assets/gifs/login.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -89,7 +89,7 @@
 }
 /* Register */
 .register__image {
-    background-image: url("../../../public/gifs/login-2.gif");
+    background-image: url("../assets/gifs/login-2.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

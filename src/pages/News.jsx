@@ -7,6 +7,8 @@ import Articles from '../components/Articles';
 import Tips from '../components/Tips';
 import TrendsCarousel from '../components/TrendsCarousel';
 import MarketUpdates from '../components/MarketUpdates';
+import TrendsGestion from '../components/TrendsGestion';
+import TrendsInversiones from '../components/TrendsInversiones';
 import '../styles/style-news.css';
 
 export const News = () => {
@@ -30,11 +32,34 @@ export const News = () => {
                 fundamental en la construcción de un futuro próspero.
               </p>
             </a>
-          </div>
+          </div> {/*Fin noticias__informacion */}
           <Tips />
         </div> {/*Fin noticias */}
+        <nav id="navbar-consejos" className="navbar px-3 mb-3 sticky-top navbar__finanzas">
+          <ul className="nav nav-tabs">
+            <li className="nav-item">
+              <a className="nav-link active navbar__links" href="#articulos">
+                Articulos
+              </a>
+            </li> {/*Fin nav-item */}
+            <li className="nav-item">
+              <a className="nav-link navbar__links" href="#consejos">
+                Consejos
+              </a>
+            </li> {/*Fin nav-item */}
+          </ul> {/*Fin nav-tabs */}
+        </nav> {/*Fin navbar-consejos */}
+        <div
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-consejos"
+          data-bs-smooth-scroll="true"
+          className="scrollspy-example p-3"
+          tabIndex="0"
+        ></div>
         <TrendsCarousel />
         <MarketUpdates />
+        <TrendsGestion />
+        <TrendsInversiones />
       </main> {/*Fin contenedor */}
       <Footer />
     </div>

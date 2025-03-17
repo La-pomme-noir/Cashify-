@@ -1,15 +1,14 @@
 import React from 'react';
-import '../styles/style-news.css';
 
-export const TrendsCarousel = () => {
-    return (
-    <section id='articulos'>
-    <h2 className="titles-sections">Análisis de Tendencias Financieras</h2>
-    <div id="carouselTarjetas" className="carousel slide" data-bs-ride="carousel">
+const TrendsInversiones = () => {
+  return (
+    <section id='consejos'>
+    <h2 className="titles-sections">Inversiones y crecimiento financiero</h2>
+    <div id="carouselTarjetasInversiones" className="carousel slide" data-bs-ride="carousel">
       <button
         className="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselTarjetas"
+        data-bs-target="#carouselTarjetasInversiones"
         data-bs-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -18,7 +17,7 @@ export const TrendsCarousel = () => {
       <button
         className="carousel-control-next"
         type="button"
-        data-bs-target="#carouselTarjetas"
+        data-bs-target="#carouselTarjetasInversiones"
         data-bs-slide="next"
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
@@ -30,16 +29,16 @@ export const TrendsCarousel = () => {
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
-                  <img src="/images/analisis-card1.jpg" alt="Análisis-1" />
+                  <img src="/images/consejos-inver1.jpg" alt="ConsejosInversiones-1" />
                   <span className="noticias__span">
-                    17 mar 2025 <li className="noticias__li">- 2 Min. de lectura</li>
+                    17 mar 2025 <li className="noticias__li">- 3 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Explorando el Dinamismo del Mercado de Criptomonedas</h4>
+                    <h4 className="card-title artips__title">Construye tu Futuro con Metas</h4>
                   </a>
                   <p className="card-text card__text">
-                  Descubre cómo los gráficos en tiempo real de criptomonedas ofrecen insights clave para tomar decisiones de inversión 
-                  en un entorno financiero en constante evolución.
+                  Ahorra para grandes sueños como comprar una casa. 
+                  La imagen de una mano sosteniendo una pequeña casa de madera simboliza una meta común en el crecimiento financiero: adquirir una propiedad.
                   </p>
                 </div> {/*Fin card__body */}
               </div> {/*Fin card */}
@@ -48,16 +47,16 @@ export const TrendsCarousel = () => {
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
-                  <img src="/images/analisis-card2.jpg" alt="Análisis-2" />
+                  <img src="/images/consejos-inver2.jpg" alt="ConsejosInversiones-2" />
                   <span className="noticias__span">
-                    18 mar 2025 <li className="noticias__li">- 1 Min. de lectura</li>
+                    19 mar 2025 <li className="noticias__li">- 1 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Desentrañando Tendencias con Gráficos de Área Apilada</h4>
+                    <h4 className="card-title artips__title">Cuidado con las Inversiones Arriesgadas</h4>
                   </a>
                   <p className="card-text card__text">
-                  Los gráficos de área apilada brindan una visión clara y detallada de las tendencias financieras, ideales para evaluar 
-                  el desempeño de sectores y categorías a lo largo del tiempo.
+                  Evita riesgos innecesarios que quemen tu capital.
+                  La imagen de un billete enrollado y quemado es una advertencia poderosa en el mundo de las inversiones: los riesgos mal calculados pueden destruir tu capital.
                   </p>
                 </div> {/*Fin card__body */}
               </div> {/*Fin card */}
@@ -66,15 +65,16 @@ export const TrendsCarousel = () => {
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
-                  <img src="/images/analisis-card3.jpg" alt="Análisis-3" />
+                  <img src="/images/consejos-inver3.jpg" alt="ConsejosInversiones-3" />
                   <span className="noticias__span">
-                    19 mar 2025 <li className="noticias__li">- 3 Min. de lectura</li>
+                    17 mar 2025 <li className="noticias__li">- 2 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Reportes Financieros: Análisis Práctico con Herramientas Clave</h4>
+                    <h4 className="card-title artips__title">Organización para el Crecimiento</h4>
                   </a>
                   <p className="card-text card__text">
-                  Explora reportes con gráficos de dona y barras, acompañados de calculadora y lentes, que facilitan un análisis accesible y efectivo de las tendencias del mercado.
+                  Cuenta y organiza tu dinero para invertir sabiamente.
+                  La imagen de billetes, una calculadora y una máquina contadora de dinero enfatiza la importancia de la organización en las inversiones y el crecimiento financiero.
                   </p>
                 </div> {/*Fin card__body */}
               </div> {/*Fin card */}
@@ -84,22 +84,22 @@ export const TrendsCarousel = () => {
         </div> {/*Fin tendencias__item */}
 
         {/* Segundas cards */}
-
+        
         <div className="carousel-item tendencias__item">
           <div className="row">
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
-                  <img src="/images/analisis-card4.jpg" alt="Análisis-4" />
+                  <img src="/images/consejos-inver4.jpg" alt="ConsejosInversiones-4" />
                   <span className="noticias__span">
-                    20 mar 2025 <li className="noticias__li">- 2 Min. de lectura</li>
+                    18 mar 2025 <li className="noticias__li">- 3 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Profundizando en Tendencias con Gráficos Diversificados</h4>
+                    <h4 className="card-title artips__title">Decisiones Estratégicas Simples</h4>
                   </a>
                   <p className="card-text card__text">
-                  Analiza tendencias financieras con precisión utilizando histogramas, diagramas de dona y lupas, herramientas esenciales para un estudio detallado del mercado.
-                  Estas herramientas te permiten visualizar patrones.
+                  Usa notas para decidir: comprar, mantener o vender.
+                  La imagen con notas adhesivas que dicen "BUY", "HOLD" y "SELL" ofrece un enfoque práctico y visual para tomar decisiones de inversión.
                   </p>
                 </div> {/*Fin card__body */}
               </div> {/*Fin card */}
@@ -108,15 +108,16 @@ export const TrendsCarousel = () => {
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
-                  <img src="/images/analisis-card5.jpg" alt="Análisis-5" />
+                  <img src="/images/consejos-inver5.jpg" alt="ConsejosInversiones-5" />
                   <span className="noticias__span">
                     21 mar 2025 <li className="noticias__li">- 3 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">La Convergencia entre Criptomonedas y Finanzas Tradicionales</h4>
+                    <h4 className="card-title artips__title">Celebra las Victorias del Mercado</h4>
                   </a>
                   <p className="card-text card__text">
-                  Descubre cómo Bitcoin, euros y gráficos en laptops fusionan las dinámicas de cripto y monedas tradicionales en las tendencias financieras actuales.
+                  Disfruta las ganancias con análisis de mercado atento.
+                  La imagen de una persona celebrando frente a gráficos de mercado refleja el lado emocionante de las inversiones: las victorias financieras.
                   </p>
                 </div> {/*Fin card__body */}
               </div> {/*Fin card */}
@@ -125,16 +126,16 @@ export const TrendsCarousel = () => {
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
-                  <img src="/images/analisis-card6.jpg" alt="Análisis-6" />
+                  <img src="/images/consejos-inver6.jpg" alt="ConsejosInversiones-6" />
                   <span className="noticias__span">
                     22 mar 2025 <li className="noticias__li">- 1 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Análisis Financiero Avanzado con Herramientas Modernas</h4>
+                    <h4 className="card-title artips__title">Diversifica con Opciones Modernas</h4>
                   </a>
                   <p className="card-text card__text">
-                  Evalúa proyecciones económicas con reportes, gráficos de barras y líneas, y calculadoras, optimizando el análisis de tendencias con tecnología actual.
-                  Aprovecha la tecnología actual para identificar patrones clave
+                  Incluye criptomonedas y monedas tradicionales en tu plan.
+                  La imagen de una moneda de Bitcoin junto a pilas de monedas tradicionales ilustra la importancia de la diversificación en el crecimiento financiero.
                   </p>
                 </div> {/*Fin card__body */}
               </div> {/*Fin card */}
@@ -148,4 +149,4 @@ export const TrendsCarousel = () => {
   );
 };
 
-export default TrendsCarousel;
+export default TrendsInversiones;
