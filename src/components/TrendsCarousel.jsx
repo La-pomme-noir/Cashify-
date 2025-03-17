@@ -2,7 +2,9 @@ import React from 'react';
 import '../styles/style-news.css';
 
 export const TrendsCarousel = () => {
-  return (
+    return (
+    <>
+    <h2 className="titles-sections">Análisis de Tendencias Financieras</h2>
     <div id="carouselTarjetas" className="carousel slide" data-bs-ride="carousel">
       <button
         className="carousel-control-prev"
@@ -33,16 +35,16 @@ export const TrendsCarousel = () => {
                     17 mar 2025 <li className="noticias__li">- 2 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Explorando el Mercado de Criptomonedas</h4>
+                    <h4 className="card-title artips__title">Explorando el Dinamismo del Mercado de Criptomonedas</h4>
                   </a>
                   <p className="card-text card__text">
-                    Descubre cómo los gráficos en tiempo real de criptomonedas, te permiten analizar tendencias y tomar decisiones de inversión informadas en un
-                    entorno financiero dinámico.
+                  Descubre cómo los gráficos en tiempo real de criptomonedas ofrecen insights clave para tomar decisiones de inversión 
+                  en un entorno financiero en constante evolución.
                   </p>
-                </div>
-              </div>
-            </div>
-            {/* Agrega las otras dos tarjetas de la primera diapositiva aquí */}
+                </div> {/*Fin card__body */}
+              </div> {/*Fin card */}
+            </div> {/*Fin tendencias__cards */}
+
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
@@ -51,15 +53,16 @@ export const TrendsCarousel = () => {
                     18 mar 2025 <li className="noticias__li">- 1 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Desentrañando Patrones con Gráficos de Área Apilada</h4>
+                    <h4 className="card-title artips__title">Desentrañando Tendencias con Gráficos de Área Apilada</h4>
                   </a>
                   <p className="card-text card__text">
-                    Los gráficos de área apilada en esta pantalla ofrecen una visión clara de las tendencias financieras a lo largo del tiempo, ideal para analizar
-                    el crecimiento de diferentes sectores o categorías.
+                  Los gráficos de área apilada brindan una visión clara y detallada de las tendencias financieras, ideales para evaluar 
+                  el desempeño de sectores y categorías a lo largo del tiempo.
                   </p>
-                </div>
-              </div>
-            </div>
+                </div> {/*Fin card__body */}
+              </div> {/*Fin card */}
+            </div> {/*Fin tendencias__card */}
+
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
@@ -68,17 +71,20 @@ export const TrendsCarousel = () => {
                     19 mar 2025 <li className="noticias__li">- 3 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Reportes financieros con gráficos y calculadora</h4>
+                    <h4 className="card-title artips__title">Reportes Financieros: Análisis Práctico con Herramientas Clave</h4>
                   </a>
                   <p className="card-text card__text">
-                    Esta imagen presenta reportes con gráficos de dona y barras, acompañados de una calculadora, un teléfono y lentes, destacando un enfoque práctico
-                    y accesible para analizar tendencias financieras.
+                  Explora reportes con gráficos de dona y barras, acompañados de calculadora y lentes, que facilitan un análisis accesible y efectivo de las tendencias del mercado.
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                </div> {/*Fin card__body */}
+              </div> {/*Fin card */}
+            </div> {/*Fin tendencias__card */}
+
+          </div> {/*Fin row */}
+        </div> {/*Fin tendencias__item */}
+
+        {/* Segundas cards */}
+
         <div className="carousel-item tendencias__item">
           <div className="row">
             <div className="col-md-4 tendencias__cards">
@@ -89,16 +95,16 @@ export const TrendsCarousel = () => {
                     20 mar 2025 <li className="noticias__li">- 2 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Profundizando en Datos con Gráficos Diversificados</h4>
+                    <h4 className="card-title artips__title">Profundizando en Tendencias con Gráficos Diversificados</h4>
                   </a>
                   <p className="card-text card__text">
-                    Explora una variedad de gráficos financieros, desde histogramas hasta diagramas de dona, que te permiten analizar tendencias con detalle usando
-                    lupas y notas como apoyo.
+                  Analiza tendencias financieras con precisión utilizando histogramas, diagramas de dona y lupas, herramientas esenciales para un estudio detallado del mercado.
+                  Estas herramientas te permiten visualizar patrones.
                   </p>
-                </div>
-              </div>
-            </div>
-            {/* Agrega las otras dos tarjetas de la segunda diapositiva aquí */}
+                </div> {/*Fin card__body */}
+              </div> {/*Fin card */}
+            </div> {/*Fin tendencias__card */}
+
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
@@ -107,15 +113,15 @@ export const TrendsCarousel = () => {
                     21 mar 2025 <li className="noticias__li">- 3 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">La Fusión de Criptomonedas y Finanzas Tradicionales</h4>
+                    <h4 className="card-title artips__title">La Convergencia entre Criptomonedas y Finanzas Tradicionales</h4>
                   </a>
                   <p className="card-text card__text">
-                    Esta imagen combina monedas de Bitcoin, billetes de euro y una laptop con gráficos, mostrando cómo las tendencias financieras abarcan tanto
-                    cripto como monedas tradicionales.
+                  Descubre cómo Bitcoin, euros y gráficos en laptops fusionan las dinámicas de cripto y monedas tradicionales en las tendencias financieras actuales.
                   </p>
-                </div>
-              </div>
-            </div>
+                </div> {/*Fin card__body */}
+              </div> {/*Fin card */}
+            </div> {/*Fin tendencias__card */}
+
             <div className="col-md-4 tendencias__cards">
               <div className="card">
                 <div className="card-body card__body">
@@ -124,19 +130,21 @@ export const TrendsCarousel = () => {
                     22 mar 2025 <li className="noticias__li">- 1 Min. de lectura</li>
                   </span>
                   <a className="noticias__artips" href="#">
-                    <h4 className="card-title artips__title">Análisis Financiero Práctico con Herramientas Modernas</h4>
+                    <h4 className="card-title artips__title">Análisis Financiero Avanzado con Herramientas Modernas</h4>
                   </a>
                   <p className="card-text card__text">
-                    Esta imagen muestra reportes financieros con gráficos de barras y líneas, acompañados de calculadoras, ideales para un análisis profundo de
-                    tendencias y proyecciones económicas.
+                  Evalúa proyecciones económicas con reportes, gráficos de barras y líneas, y calculadoras, optimizando el análisis de tendencias con tecnología actual.
+                  Aprovecha la tecnología actual para identificar patrones clave
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                </div> {/*Fin card__body */}
+              </div> {/*Fin card */}
+            </div> {/*Fin tendencias__card */}
+
+          </div> {/*Fin row */}
+        </div> {/*Fin tendencias__item */}
+      </div> {/*Fin tendencias */}
+    </div> {/*Fin carousel__slide */}
+    </>
   );
 };
 

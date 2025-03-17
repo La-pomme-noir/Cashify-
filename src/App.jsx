@@ -15,7 +15,6 @@ import { AuthProvider } from './context/AuthContext';
 export const App = () => {
   return (
     <AuthProvider>
-      {/* <Navbar /> */}
       <Router>
         <Routes>
           <Route path="/" element={<Home />} /> 
@@ -30,7 +29,6 @@ export const App = () => {
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </Router>
-      {/* <Footer /> */}
     </AuthProvider>
   );
 };

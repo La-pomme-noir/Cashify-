@@ -32,10 +32,10 @@ export const News = () => {
             </a>
           </div>
           <Tips />
-        </div>
+        </div> {/*Fin noticias */}
         <TrendsCarousel />
         <MarketUpdates />
-      </main>
+      </main> {/*Fin contenedor */}
       <Footer />
     </div>
   );
