@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ModalNews from './ModalNews';
 import '../styles/style-news.css';
 
 export const TrendsCarousel = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
     return (
     <section id='articulos'>
     <h2 className="titles-sections">Análisis de Tendencias Financieras</h2>
@@ -34,7 +45,10 @@ export const TrendsCarousel = () => {
                   <span className="noticias__span">
                     17 mar 2025 <li className="noticias__li">- 2 Min. de lectura</li>
                   </span>
-                  <a className="noticias__artips" href="#">
+                  <a className="noticias__artips" href="#" onClick={(e) => {
+                        e.preventDefault();
+                        openModal();
+                      }}>
                     <h4 className="card-title artips__title">Explorando el Dinamismo del Mercado de Criptomonedas</h4>
                   </a>
                   <p className="card-text card__text">
@@ -144,6 +158,7 @@ export const TrendsCarousel = () => {
         </div> {/*Fin tendencias__item */}
       </div> {/*Fin tendencias */}
     </div> {/*Fin carousel__slide */}
+    {isModalOpen && <ModalNews closeModal={closeModal} />}
     </section>
   );
 };
