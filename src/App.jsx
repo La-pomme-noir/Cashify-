@@ -10,9 +10,9 @@ import Register from './pages/Register';
 // import { Profile } from './pages/Profile';
 // import { Dashboard } from './pages/Dashboard';
 // import { NotFound } from './pages/NotFound';
-// import AdminNews from './pages/AdminNews';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import AdminNewsForm from './pages/AdminNewsForm';
 
 export const App = () => {
   return (
@@ -22,7 +22,7 @@ export const App = () => {
           <Route path="/" element={<Home />} /> 
           <Route path="/news" element={<News />} /> 
           <Route path="/qanda" element={<QandA />} /> 
-          {/* <Route path="/adminNews" element={<AdminNews />}/> */}
+          <Route path="/adminNews" element={<AdminNewsForm />}/>
           {/* <ProtectedRoutes/> */}
           {/* <Route path="/conferences" element={<Conferences />} />  */}
           {/* <Route path="/myspace" element={<MySpace />} />  */}

@@ -3,12 +3,13 @@ import Header from '../components/Header';
 import NavbarNews from '../components/NavbarNews';
 import Footer from '../components/Footer';
 import NewsSection from '../components/NewsSection';
-import Articles from '../components/Articles';
-import Tips from '../components/Tips';
+import Articles from '../view/Articles';
+import Tips from '../view/Tips';
 import TrendsCarousel from '../components/TrendsCarousel';
 import MarketUpdates from '../components/MarketUpdates';
 import TrendsGestion from '../components/TrendsGestion';
 import TrendsInversiones from '../components/TrendsInversiones';
+import NewsSectionDay from '../components/NewsSectionDay';
 import '../styles/style-news.css';
 
 export const News = () => {
@@ -17,9 +18,10 @@ export const News = () => {
       <Header />
       <NavbarNews />
       <NewsSection />
+      <NewsSectionDay />
       <main className="contenedor">
         <div className="noticias">
-          <Articles />
+          {/* <Articles /> */}
           <div className="noticias__informacion shadow-cards shadow__cards--bg">
             <img src="/images/noticias-blog.jpg" alt="Noticias blog" />
             <span className="noticias__span">
@@ -33,7 +35,7 @@ export const News = () => {
               </p>
             </a>
           </div> {/*Fin noticias__informacion */}
-          <Tips />
+          {/* <Tips /> */}
         </div> {/*Fin noticias */}
         <nav id="navbar-consejos" className="navbar px-3 mb-3 sticky-top navbar__finanzas">
           <ul className="nav nav-tabs">
@@ -56,10 +58,10 @@ export const News = () => {
           className="scrollspy-example p-3"
           tabIndex="0"
         ></div>
-        <TrendsCarousel />
-        <MarketUpdates />
-        <TrendsGestion />
-        <TrendsInversiones />
+        {/* <TrendsCarousel category="Análisis de Tendencias Financieras"/>
+        <MarketUpdates category="Actualizaciones del Mercado"/>
+        <TrendsGestion category="Gestión del dinero personal"/>
+        <TrendsInversiones category="Inversiones y crecimiento financiero"/> */}
       </main> {/*Fin contenedor */}
       <Footer />
     </div>
