@@ -1,13 +1,12 @@
-import React, {useState}from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
-import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useContext(AuthContext);
-  const userName = user ? user.displayName || user.email.split('@')[0] : 'User';
+  const { currentUser } = useContext(AuthContext); // Cambiamos "user" a "currentUser"
+  const userName = currentUser ? currentUser.displayName || currentUser.email.split('@')[0] : 'User';
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -20,10 +19,12 @@ const Header = () => {
           alt="Logo Cashify"
         />
       </Link>
-      {user && (
+      {currentUser && (
         <div className="header__hamburger">
           <button className="hamburger__button" onClick={toggleMenu}>
-            <span className="hamburger__icon"><i className="fa-solid fa-bars"></i></span>
+            <span className="hamburger__icon">
+              <i className="fa-solid fa-bars"></i>
+            </span>
           </button>
           {isMenuOpen && <HamburgerMenu userName={userName} toggleMenu={toggleMenu} />}
         </div>

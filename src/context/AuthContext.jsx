@@ -1,20 +1,28 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { auth } from '../services/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      setLoading(false);
     });
-    return unsubscribe; // Limpia el listener cuando el componente se desmonta
+
+    return () => unsubscribe();
   }, []);
 
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
+
   return (
-    <AuthContext.Provider value={{ user }}>
+    <AuthContext.Provider value={{ currentUser }}>
       {children}
     </AuthContext.Provider>
   );

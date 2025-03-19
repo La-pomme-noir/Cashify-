@@ -3,12 +3,8 @@ import { db } from '../services/firebase';
 import { collection, query, orderBy, onSnapshot, where, limit } from 'firebase/firestore';
 import Articles from '../view/Articles';
 import Tips from '../view/Tips';
-import TrendsCarousel from './TrendsCarousel';
-import MarketUpdates from './MarketUpdates';
-import TrendsGestion from './TrendsGestion';
-import TrendsInversiones from './TrendsInversiones';
 
-const NewsSection = () => {
+const FeaturedNews = () => {
   const [featuredArticle, setFeaturedArticle] = useState(null);
   const [featuredAdvice, setFeaturedAdvice] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -66,26 +62,19 @@ const NewsSection = () => {
   }, []);
 
   if (loading) {
-    return <div>Cargando noticias...</div>;
+    return <div className="loading-message">Cargando noticias...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="error-message">{error}</div>;
   }
 
   return (
-    <div className="news-section">
-      {/* Artículos del día dinámicos */}
+    <div className="featured-news">
       <Articles article={featuredArticle} />
-      {/* Consejo del día dinámico */}
       <Tips advice={featuredAdvice} />
-      {/* Carruseles por categoría */}
-      <TrendsCarousel category="Análisis de Tendencias Financieras" />
-      <MarketUpdates category="Actualizaciones del Mercado" />
-      <TrendsGestion category="Gestión del dinero personal" />
-      <TrendsInversiones category="Inversiones y crecimiento financiero" />
     </div>
   );
 };
 
-export default NewsSection;
+export default FeaturedNews;

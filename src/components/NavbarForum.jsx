@@ -1,8 +1,9 @@
-import { React } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/global.css';
+import { AuthContext } from '../context/AuthContext';
 
 const NavbarForum = () => {
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <nav className="navegacion">
@@ -21,12 +22,17 @@ const NavbarForum = () => {
       <Link to="/conferences" className="navegacion__enlaces">
         VideoConferencias
       </Link>
-      <Link to="/login" className="navegacion__enlaces navegacion__enlaces--botones">
-        Iniciar Sesión
-      </Link>
-      <Link to="/register" className="navegacion__enlaces navegacion__enlaces--botones">
-        Registrarse
-      </Link>
+
+      {!currentUser && (
+        <>
+          <Link to="/login" className="navegacion__enlaces navegacion__enlaces--botones">
+            Iniciar Sesión
+          </Link>
+          <Link to="/register" className="navegacion__enlaces navegacion__enlaces--botones">
+            Registrarse
+          </Link>
+        </>
+      )}
     </nav>
   );
 };

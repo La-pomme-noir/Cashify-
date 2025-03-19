@@ -29,7 +29,7 @@
 .shadow__cards--bg {
     background-color: var(--white);
 }
-.noticias {
+/* .noticias {
     display: grid;
     gap: 2rem;
     padding: 1rem;
@@ -38,6 +38,43 @@
     .noticias {
         grid-template-columns: 30rem auto 30rem;
     }
+} */
+ /* Sección de noticias (Articles, elemento estático, Tips) */
+.noticias {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem;
+}
+.featured-news {
+  display: contents;
+}
+.noticias__articulos {
+  flex: 1;
+  max-width: 30rem;
+  order: 0;
+}
+.noticias__informacion {
+  flex: 1;
+  max-width: 40rem;
+  order: 1;
+}
+.noticias__consejos {
+  flex: 1;
+  max-width: 30rem;
+  order: 2;
+}
+@media (max-width: 768px) {
+  .noticias {
+      flex-direction: column;
+      align-items: center;
+  }
+  .noticias__articulos,
+  .noticias__informacion,
+  .noticias__consejos {
+      max-width: 100%;
+      width: 100%;
+  }
 }
 .artips__title {
     text-align: justify;

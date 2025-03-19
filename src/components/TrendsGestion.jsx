@@ -33,7 +33,7 @@ const TrendsGestion = ({ category }) => {
   };
 
   return (
-    <section id="articulos">
+    <section id="consejos">
       <h2 className="titles-sections">{category}</h2>
       <div id="carouselTarjetasMercado" className="carousel slide" data-bs-ride="carousel">
         <button
