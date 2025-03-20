@@ -1,0 +1,217 @@
+@import url('global.css');
+@import url('normalize.css');
+
+/* Hero Mi Espacio - Planning*/
+.bg__planning {
+    background-image: url("../assets/images/bg-myspace.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+.planning {
+    padding: 2rem;
+  }
+  
+  .planning__section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: var(--ghostwhite);
+    border-radius: 1rem;
+  }
+  
+  .planning__title {
+    font-family: var(--fuenteHeading);
+    color: var(--seagreen);
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .planning__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-family: var(--fuenteHeading);
+    color: var(--black);
+    font-size: 1.8rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid var(--platinum);
+    border-radius: 0.5rem;
+    background-color: var(--white);
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .planning__button {
+    background-color: var(--seagreen);
+    color: var(--platinum);
+    padding: 1rem;
+    font-size: 1.8rem;
+    font-family: var(--fuenteHeading);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .planning__button:hover {
+    background-color: var(--zomp);
+  }
+  
+  .planning__results {
+    margin-top: 2rem;
+  }
+  
+  .planning__results h3 {
+    font-family: var(--fuenteHeading);
+    color: var(--emerald);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .planning__summary {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .planning__summary p {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .planning__highlight--income {
+    color: var(--emerald);
+    font-weight: bold;
+  }
+  
+  .planning__highlight--expense {
+    color: var(--rojo);
+    font-weight: bold;
+  }
+  
+  .planning__highlight--positive {
+    color: var(--lightgreen);
+    font-weight: bold;
+  }
+  
+  .planning__highlight--negative {
+    color: var(--rojo);
+    font-weight: bold;
+  }
+  
+  .planning__suggestion {
+    background-color: var(--lightgreen);
+    color: var(--black);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-style: italic;
+  }
+  
+  .planning__chart {
+    max-height: 300px;
+    margin: 2rem 0;
+  }
+  
+  .planning__goals-list,
+  .planning__notes-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .planning__goal-item,
+  .planning__note-item {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .planning__note-item p {
+    margin: 0.5rem 0;
+  }
+  
+  .planning__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .planning__table th,
+  .planning__table td {
+    padding: 1rem;
+    border: 1px solid var(--platinum);
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  
+  .planning__table th {
+    background-color: var(--seagreen);
+    color: var(--platinum);
+    font-family: var(--fuenteHeading);
+  }
+  
+  .planning__table td {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  
+  @media (max-width: 768px) {
+    .planning__title {
+      font-size: 2rem;
+    }
+  
+    .form-group label {
+      font-size: 1.6rem;
+    }
+  
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-size: 1.4rem;
+    }
+  
+    .planning__button {
+      font-size: 1.6rem;
+    }
+  
+    .planning__results h3 {
+      font-size: 1.8rem;
+    }
+  
+    .planning__summary p {
+      font-size: 1.4rem;
+    }
+  
+    .planning__table th,
+    .planning__table td {
+      font-size: 1.2rem;
+      padding: 0.8rem;
+    }
+  }

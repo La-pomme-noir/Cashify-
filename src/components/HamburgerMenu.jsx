@@ -8,8 +8,8 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
   const navigate = useNavigate();
   const [userRole, setUserRole] = useState(null);
   const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
-
-  // Obtener el rol del usuario desde Firestore
+  const [isMySpaceDropdownOpen, setIsMySpaceDropdownOpen] = useState(false);
+  
   useEffect(() => {
     const fetchUserRole = async () => {
       try {
@@ -41,6 +41,10 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
 
   const toggleNewsDropdown = () => {
     setIsNewsDropdownOpen(!isNewsDropdownOpen);
+  };
+
+  const toggleMySpaceDropdown = () => {
+    setIsMySpaceDropdownOpen(!isMySpaceDropdownOpen);
   };
 
   return (
@@ -89,9 +93,31 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
         <Link to="/qanda" className="hamburger__link" onClick={toggleMenu}>
           Foro Financiero
         </Link>
-        <Link to="/myspace" className="hamburger__link" onClick={toggleMenu}>
-          Mi Espacio
-        </Link>
+
+        {/* Nuevo submenú para Mi Espacio */}
+        <div className="hamburger__dropdown">
+          <div className="hamburger__link" onClick={toggleMySpaceDropdown}>
+            Mi Espacio
+            <i
+              className={`fa-solid ${
+                isMySpaceDropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'
+              } dropdown-icon`}
+            ></i>
+          </div>
+          <div
+            className={`hamburger__dropdown-menu ${
+              isMySpaceDropdownOpen ? 'show' : ''
+            }`}
+          >
+            <Link to="/myspace" className="hamburger__link--dropdown hamburger__link" onClick={toggleMenu}>
+              Simuladores
+            </Link>
+            <Link to="/planning" className="hamburger__link--dropdown hamburger__link" onClick={toggleMenu}>
+              Planificación
+            </Link>
+          </div>
+        </div>
+
         <Link to="/conferences" className="hamburger__link" onClick={toggleMenu}>
           VideoConferencias
         </Link>
