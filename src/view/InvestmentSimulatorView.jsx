@@ -37,7 +37,7 @@ const InvestmentSimulatorView = ({
     : null;
 
   return (
-    <div className="simulator shadow-cards">
+    <div id='inversion' className="simulator shadow-cards">
       <h2 className="titles-sections">Simulador de Inversión</h2>
       <div className="simulator__form">
         <div className="form-group">

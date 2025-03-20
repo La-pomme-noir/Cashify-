@@ -59,7 +59,7 @@
   }
   
   .simulator__button:hover {
-    background-color: var(--zomp);
+    background-color: var(--black);
   }
   
   .simulator__results {

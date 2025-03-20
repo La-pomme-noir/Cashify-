@@ -35,7 +35,7 @@ const DebtSimulatorView = ({
     : null;
 
   return (
-    <div className="simulator shadow-cards">
+    <div id='deudas' className="simulator shadow-cards">
       <h2 className="titles-sections">Simulador de Deudas</h2>
       <div className="simulator__form">
         <div className="form-group">

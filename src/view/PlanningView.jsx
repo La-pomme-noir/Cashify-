@@ -1,3 +1,4 @@
+// src/components/PlanningView.jsx
 import React from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, ArcElement, Tooltip, Legend } from 'chart.js';
@@ -12,8 +13,13 @@ const PlanningView = ({
   setGoalAmount,
   goalTimeframe,
   setGoalTimeframe,
+  goalPaymentMethod,
+  setGoalPaymentMethod,
   goals,
   saveGoal,
+  deleteGoal,
+  editGoal,
+  editingGoal,
 
   // Transacciones
   transactionType,
@@ -24,8 +30,13 @@ const PlanningView = ({
   setTransactionCategory,
   paymentMethod,
   setPaymentMethod,
+  selectedGoalId,
+  setSelectedGoalId,
   transactions,
   saveTransaction,
+  deleteTransaction,
+  editTransaction,
+  editingTransaction,
 
   // Notas
   noteContent,
@@ -36,6 +47,7 @@ const PlanningView = ({
   setNotePaymentMethod,
   notes,
   saveNote,
+  deleteNote,
 
   // Datos calculados
   totalIncome,
@@ -48,7 +60,7 @@ const PlanningView = ({
     datasets: [
       {
         label: 'Progreso hacia el objetivo ($)',
-        data: goals.map(goal => goal.progress),
+        data: goals.map(goal => Math.min(parseFloat(goal.progress), parseFloat(goal.amount))),
         backgroundColor: 'rgba(68, 207, 108, 0.6)', // --emerald
         borderColor: 'rgba(68, 207, 108, 1)',
         borderWidth: 1,
@@ -81,7 +93,7 @@ const PlanningView = ({
       <h1 className="titles-sections">Planificación Financiera</h1>
 
       {/* Sección de objetivos financieros */}
-      <section className="planning__section shadow-cards">
+      <section id='planificacion' className="planning__section shadow-cards">
         <h2 className="planning__title">Definir Objetivos Financieros</h2>
         <div className="planning__form">
           <div className="form-group">
@@ -111,9 +123,33 @@ const PlanningView = ({
               <option value="long">Largo plazo (5+ años)</option>
             </select>
           </div>
+          <div className="form-group">
+            <label>Método de pago (cómo planeas financiarlo):</label>
+            <select value={goalPaymentMethod} onChange={(e) => setGoalPaymentMethod(e.target.value)}>
+              <option value="">Selecciona un método</option>
+              <option value="cash">Efectivo</option>
+              <option value="card">Tarjeta</option>
+              <option value="transfer">Transferencia</option>
+              <option value="savings">Ahorros</option>
+            </select>
+          </div>
           <button className="planning__button" onClick={saveGoal}>
-            Guardar Objetivo
+            {editingGoal ? 'Actualizar Objetivo' : 'Guardar Objetivo'}
           </button>
+          {editingGoal && (
+            <button
+              className="planning__button planning__button--cancel"
+              onClick={() => {
+                setEditingGoal(null);
+                setGoalDescription('');
+                setGoalAmount('');
+                setGoalTimeframe('short');
+                setGoalPaymentMethod('');
+              }}
+            >
+              Cancelar
+            </button>
+          )}
         </div>
 
         {goals.length > 0 && (
@@ -129,6 +165,14 @@ const PlanningView = ({
                   <span>Monto: ${goal.amount}</span>
                   <span>Plazo: {goal.timeframe}</span>
                   <span>Progreso: ${goal.progress}</span>
+                  <div className="planning__actions">
+                    <button className="planning__edit-button" onClick={() => editGoal(goal)}>
+                      Editar
+                    </button>
+                    <button className="planning__delete-button" onClick={() => deleteGoal(goal.id)}>
+                      Eliminar
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -137,7 +181,7 @@ const PlanningView = ({
       </section>
 
       {/* Sección de registro de transacciones */}
-      <section className="planning__section shadow-cards">
+      <section id='movimiento' className="planning__section shadow-cards">
         <h2 className="planning__title">Registro de Ingresos y Gastos</h2>
         <div className="planning__form">
           <div className="form-group">
@@ -168,6 +212,7 @@ const PlanningView = ({
                 <>
                   <option value="salary">Salario</option>
                   <option value="freelance">Freelance</option>
+                  <option value="goal">Objetivo</option>
                   <option value="other">Otros ingresos</option>
                 </>
               ) : (
@@ -181,6 +226,19 @@ const PlanningView = ({
               )}
             </select>
           </div>
+          {transactionType === 'income' && transactionCategory === 'goal' && (
+            <div className="form-group">
+              <label>Destinar a objetivo:</label>
+              <select value={selectedGoalId} onChange={(e) => setSelectedGoalId(e.target.value)}>
+                <option value="">Selecciona un objetivo</option>
+                {goals.map(goal => (
+                  <option key={goal.id} value={goal.id}>
+                    {goal.description} (${goal.amount})
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
           <div className="form-group">
             <label>Método de pago:</label>
             <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
@@ -191,8 +249,23 @@ const PlanningView = ({
             </select>
           </div>
           <button className="planning__button" onClick={saveTransaction}>
-            Registrar Transacción
+            {editingTransaction ? 'Actualizar Transacción' : 'Registrar Transacción'}
           </button>
+          {editingTransaction && (
+            <button
+              className="planning__button planning__button--cancel"
+              onClick={() => {
+                setEditingTransaction(null);
+                setTransactionType('income');
+                setTransactionAmount('');
+                setTransactionCategory('');
+                setPaymentMethod('');
+                setSelectedGoalId('');
+              }}
+            >
+              Cancelar
+            </button>
+          )}
         </div>
 
         {transactions.length > 0 && (
@@ -218,6 +291,7 @@ const PlanningView = ({
                   <th>Categoría</th>
                   <th>Método de Pago</th>
                   <th>Fecha</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -228,6 +302,14 @@ const PlanningView = ({
                     <td>{t.category}</td>
                     <td>{t.paymentMethod}</td>
                     <td>{new Date(t.timestamp.seconds * 1000).toLocaleDateString()}</td>
+                    <td>
+                      <button className="planning__edit-button" onClick={() => editTransaction(t)}>
+                        Editar
+                      </button>
+                      <button className="planning__delete-button" onClick={() => deleteTransaction(t.id)}>
+                        Eliminar
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -237,7 +319,7 @@ const PlanningView = ({
       </section>
 
       {/* Sección de notas de planificación */}
-      <section className="planning__section shadow-cards">
+      <section id='notas' className="planning__section shadow-cards">
         <h2 className="planning__title">Notas de Planificación</h2>
         <div className="planning__form">
           <div className="form-group">
@@ -286,6 +368,9 @@ const PlanningView = ({
                   <p><strong>Categoría:</strong> {note.category}</p>
                   <p><strong>Método de pago:</strong> {note.paymentMethod}</p>
                   <p><em>{new Date(note.timestamp.seconds * 1000).toLocaleString()}</em></p>
+                  <button className="planning__delete-button" onClick={() => deleteNote(note.id)}>
+                    Eliminar
+                  </button>
                 </li>
               ))}
             </ul>

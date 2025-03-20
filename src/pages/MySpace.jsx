@@ -22,9 +22,36 @@ export const MySpace = () => {
       <NavbarMySpace />
       <MySpaceSection />
       <main className="contenedor">
+      <nav id="navbar-finanzas" className="navbar px-3 mb-3 sticky-top navbar__finanzas">
+          <ul className="nav nav-tabs">
+            <li className="nav-item">
+              <a className="nav-link active navbar__links" href="#inversion">
+                Simulador Inversión
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link navbar__links" href="#deudas">
+                Simulador Deudas
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link navbar__links" href="#ahorro">
+                Simulador Ahorro
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-finanzas"
+          data-bs-smooth-scroll="true"
+          className="scrollspy-example bg-body-tertiary p-3 content__scrollspy shadow-cards"
+          tabIndex="0"
+        >
         <InvestmentSimulatorView {...investmentProps} />
         <DebtSimulatorView {...debtProps} />
         <SavingsSimulatorView {...savingsProps} />
+        </div>
       </main>
       <Footer />
     </div>

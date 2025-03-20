@@ -6,8 +6,7 @@ const ForumContent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Pregunta publicada:', question);
-    setQuestion(''); // Limpiar el textarea después de enviar
-    // Aquí podrías agregar la lógica para enviar al backend
+    setQuestion('');
   };
 
   return (
