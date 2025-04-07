@@ -1,33 +1,29 @@
-// src/context/AuthContext.jsx
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+import { auth } from '../services/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
-// Crear el contexto
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
-// Proveedor del contexto
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Estado para el usuario
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const login = (userData) => {
-    setUser(userData);
-  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
 
-  const logout = () => {
-    setUser(null);
-  };
+    return () => unsubscribe();
+  }, []);
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ currentUser }}>
       {children}
     </AuthContext.Provider>
   );
-};
-
-// Hook para usar el contexto
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
 };

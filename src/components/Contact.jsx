@@ -17,7 +17,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Formulario enviado:', formData);
-    // Aquí puedes agregar la lógica para enviar el formulario a un backend
   };
 
   return (
