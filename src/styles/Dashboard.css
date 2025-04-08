@@ -1,0 +1,51 @@
+/* dashboard.css y suscripciones.css */
+:root {
+    --emerald: #00c896;
+    --zomp: #4cc9b0;
+    --platinum: #e5e5e5;
+    --black: #1a1a1a;
+    --white: #fff;
+  }
+  
+  .btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn__emerald {
+    background-color: var(--emerald);
+    color: var(--white);
+  }
+  
+  .btn__emerald:hover {
+    background-color: #00b080;
+  }
+  
+  .btn__outline {
+    background-color: transparent;
+    color: var(--emerald);
+    border: 2px solid var(--emerald);
+  }
+  
+  .plan {
+    background-color: var(--white);
+    border: 1px solid var(--platinum);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin: 1rem;
+    max-width: 300px;
+  }
+  
+  .planes {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
