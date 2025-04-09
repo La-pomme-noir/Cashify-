@@ -29,7 +29,7 @@ const ConferenceTable = () => (
         </tbody>
 
       </table>
-    </div> /* Fin conference-table-container */
+    </div> {/* Fin conference-table-container */}
   </section>
 );
 
