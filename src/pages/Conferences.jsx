@@ -1,26 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from '../components/Header';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar'; // o NavbarMySpace si usas ese
 import Footer from '../components/Footer';
 import Peer from "peerjs";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../services/firebase";
-import DashboardConferences from './DashboardConferences'; // Solo si ya lo tienes
 import '../styles/style-conference.css';
+
 
 const Conferences = () => {
   const [peerId, setPeerId] = useState('');
   const [remoteId, setRemoteId] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const myVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setIsLoggedIn(!!user);
-    });
-    return () => unsubscribe();
-  }, []);
 
   useEffect(() => {
     const peer = new Peer();
@@ -59,22 +49,17 @@ const Conferences = () => {
     });
   };
 
-  // 🔁 Render condicional
-  if (isLoggedIn) {
-    return <DashboardConferences />;
-  }
-
   return (
     <>
       <Header />
       <Navbar />
       <div className="conference-container">
         <section className="welcome-section">
-          <h1>Sección de Videoconferencias</h1>
-          <p>Explora nuestra plataforma de videoconferencias para profesionales en gestión financiera. Aprende de expertos del sector y mantente al día con las últimas tendencias.</p>
+          <h1>Welcome to Cashify’s Conference Section</h1>
+          <p>Explore our video conference platform for financial management professionals. Learn from industry experts and stay updated on the latest trends.</p>
           <div className="btn-group">
-            <button className="primary-btn">Acción principal</button>
-            <button className="secondary-btn">Acción secundaria</button>
+            <button className="primary-btn">Main action</button>
+            <button className="secondary-btn">Secondary action</button>
           </div>
         </section>
 
@@ -93,65 +78,60 @@ const Conferences = () => {
               <video ref={myVideoRef} autoPlay playsInline muted></video>
             </div>
             <div>
-              <h2>Video remoto</h2>
+              <h2>Remoto</h2>
               <video ref={remoteVideoRef} autoPlay playsInline></video>
             </div>
           </div>
           <div className="call-controls">
             <p>Tu ID: <strong>{peerId}</strong></p>
-            <input
-              type="text"
-              value={remoteId}
-              onChange={(e) => setRemoteId(e.target.value)}
-              placeholder="ID del otro usuario"
-            />
+            <input type="text" value={remoteId} onChange={(e) => setRemoteId(e.target.value)} placeholder="ID del otro usuario" />
             <button onClick={callUser}>Llamar</button>
           </div>
         </section>
 
         <section className="info-banner">
-          <h2>Únete a las Videoconferencias de Cashify</h2>
-          <p>Aprende de expertos financieros y mejora tus habilidades en gestión financiera.</p>
-          <button className="primary-btn">Regístrate ahora</button>
+          <h2>Join Cashify’s Video Conferences</h2>
+          <p>Learn from financial experts and grow your financial management skills.</p>
+          <button className="primary-btn">Sign up now</button>
         </section>
 
         <section className="pricing-plan">
-          <h2>Planes de precios</h2>
-          <p>Elige el plan perfecto para ti. Aprende de forma inteligente, clara y constante, adaptándote con nosotros.</p>
+          <h2>Pricing plan</h2>
+          <p>Choose the perfect plan for you. Learn smart, clear and wise, continuously adapting with us.</p>
           <div className="plan-toggle">
-            <button>Mensual</button>
-            <button>Anual</button>
+            <button>Monthly</button>
+            <button>Yearly</button>
           </div>
           <div className="plans">
             <div className="plan">
-              <h3>Plan Básico</h3>
-              <p className="price">$20/mes</p>
+              <h3>Basic plan</h3>
+              <p className="price">$20/mo</p>
               <ul>
-                <li>✔ Acceso básico</li>
-                <li>✔ 1 sesión semanal</li>
-                <li>✔ Chat estándar</li>
+                <li>✔ Basic access</li>
+                <li>✔ 1 session weekly</li>
+                <li>✔ Standard chat</li>
               </ul>
-              <button className="outline-btn">Comenzar</button>
+              <button className="outline-btn">Get started</button>
             </div>
             <div className="plan popular">
-              <h3>Plan Empresarial</h3>
-              <p className="price">$29/mes</p>
+              <h3>Business plan</h3>
+              <p className="price">$29/mo</p>
               <ul>
-                <li>✔ 3 sesiones semanales</li>
-                <li>✔ Herramientas de chat avanzadas</li>
-                <li>✔ Análisis de retroalimentación</li>
+                <li>✔ 3 sessions weekly</li>
+                <li>✔ Pro chat tools</li>
+                <li>✔ Feedback analytics</li>
               </ul>
-              <button className="filled-btn">Comenzar</button>
+              <button className="filled-btn">Get started</button>
             </div>
             <div className="plan">
-              <h3>Plan Corporativo</h3>
-              <p className="price">$49/mes</p>
+              <h3>Enterprise plan</h3>
+              <p className="price">$49/mo</p>
               <ul>
-                <li>✔ Sesiones ilimitadas</li>
-                <li>✔ Acceso completo para el equipo</li>
-                <li>✔ Datos e insights</li>
+                <li>✔ Unlimited sessions</li>
+                <li>✔ Full team access</li>
+                <li>✔ Insights & data</li>
               </ul>
-              <button className="filled-btn">Comenzar</button>
+              <button className="filled-btn">Get started</button>
             </div>
           </div>
         </section>

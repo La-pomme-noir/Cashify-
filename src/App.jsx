@@ -9,8 +9,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AdminNewsForm from './pages/AdminNewsForm';
 import Conferences from "./pages/Conferences";
-import DashboardConferences from "./pages/DashboardConferences";
-
 
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoutes from './components/ProtectedRoutes';
@@ -51,7 +49,6 @@ export const App = () => {
           <Route path="/conferences" element={<Conferences />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<DashboardConferences />} />
           {/* <Route path="/profile" element={<Profile />} /> */}
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           {/* <Route path="*" element={<NotFound />} /> */}
