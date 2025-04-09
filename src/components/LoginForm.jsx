@@ -13,6 +13,8 @@ export const LoginForm = () => {
     showAlert,
     handleSubmit,
     handleGoogleLogin,
+    showRecaptchaV2,
+    handleRecaptchaV2,
     closeAlert,
   } = LoginLogic();
 
@@ -24,6 +26,8 @@ export const LoginForm = () => {
       setPassword={setPassword}
       handleSubmit={handleSubmit}
       handleGoogleLogin={handleGoogleLogin}
+      showRecaptchaV2={showRecaptchaV2}
+      handleRecaptchaV2={handleRecaptchaV2}
       showAlert={showAlert}
       error={error}
       success={success}

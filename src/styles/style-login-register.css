@@ -155,3 +155,9 @@
   .strength-fuerte {
     color: var(--seagreen);
   }
+  /* Recaptcha */
+  .login__recaptcha {
+    margin: 1rem;
+    display: flex;
+    justify-content: left;
+  }

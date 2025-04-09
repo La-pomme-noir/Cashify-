@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Alert from '../components/Alert';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const RegisterFormUI = ({
   username,
@@ -19,7 +20,10 @@ const RegisterFormUI = ({
   closeAlert,
   passwordCriteria,
   passwordStrength,
+  handleRecaptchaV2, // Añadido como prop
 }) => {
+  const RECAPTCHA_V2_SITE_KEY = import.meta.env.VITE_RECAPTCHA_V2_SITE_KEY;
+
   return (
     <main className="contenedor">
       <div className="login shadow-cards shadow__cards--login">
@@ -107,6 +111,11 @@ const RegisterFormUI = ({
               <a href="#" className="login__check">
                 Estoy de acuerdo con los términos y condiciones <i className="fa-solid fa-file-contract"></i>
               </a>
+            </div>
+
+            {/* Añadir reCAPTCHA v2 */}
+            <div className="login__recaptcha">
+              <ReCAPTCHA sitekey={RECAPTCHA_V2_SITE_KEY} onChange={handleRecaptchaV2} />
             </div>
 
             <button type="submit" className="login__button">

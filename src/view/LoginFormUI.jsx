@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Alert from '../components/Alert';
+import React from "react";
+import { Link } from "react-router-dom";
+import Alert from "../components/Alert";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const LoginFormUI = ({
   email,
@@ -10,10 +11,15 @@ const LoginFormUI = ({
   handleSubmit,
   handleGoogleLogin,
   showAlert,
+  showRecaptchaV2,
+  handleRecaptchaV2,
   error,
   success,
   closeAlert,
 }) => {
+  // Clave de sitio de reCAPTCHA v2 (reemplaza con tu clave)
+  const RECAPTCHA_V2_SITE_KEY = import.meta.env.VITE_RECAPTCHA_V2_SITE_KEY;
+
   return (
     <main className="contenedor">
       <div className="login shadow-cards shadow__cards--login">
@@ -21,7 +27,9 @@ const LoginFormUI = ({
         <form className="login__form shadow-cards" onSubmit={handleSubmit}>
           <fieldset>
             <h2 className="login__title">Bienvenido a Cashify</h2>
-            <legend className="login__span">Ingresa tus credenciales para acceder a todos los servicios</legend>
+            <legend className="login__span">
+              Ingresa tus credenciales para acceder a todos los servicios
+            </legend>
 
             <div className="login__campos">
               <label htmlFor="email" className="login__label">
@@ -55,24 +63,33 @@ const LoginFormUI = ({
               Olvidaste tu contraseña? <i className="fa-solid fa-user-lock"></i>
             </a>
 
+            {/* Mostrar reCAPTCHA v2 siempre */}
+            {showRecaptchaV2 && (
+              <div className="login__recaptcha">
+                <ReCAPTCHA sitekey={RECAPTCHA_V2_SITE_KEY} onChange={handleRecaptchaV2} />
+              </div>
+            )}
+
             <button type="submit" className="login__button">
               Login
             </button>
 
             <hr className="login__hr" />
             <span className="login__span">Iniciar Sesión con Terceros</span>
-            <a href="#" className="login__enlace--google" onClick={handleGoogleLogin}>
+            <button type="button" className="login__enlace--google" onClick={handleGoogleLogin}>
               Iniciar Sesión con Google <i className="fa-brands fa-google"></i>
-            </a>
+            </button>
             <span className="login__span">
-              No tienes una cuenta?{' '}
+              No tienes una cuenta?{" "}
               <Link to="/register" className="login__txtregister">
                 !Registrate!
               </Link>
             </span>
           </fieldset>
         </form>
-        {showAlert && <Alert message={error || success} type={error ? 'error' : 'success'} onClose={closeAlert} />}
+        {showAlert && (
+          <Alert message={error || success} type={error ? "error" : "success"} onClose={closeAlert} />
+        )}
       </div>
     </main>
   );

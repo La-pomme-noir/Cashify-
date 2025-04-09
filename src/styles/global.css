@@ -6,7 +6,7 @@
     --platinum: #E0E0E2; /*Letra navbar*/
     --ghostwhite: #FBFBFF; /*bg cards*/
     --black: #070707; /*Parrafos, letra navbar*/
-    --emerald: #44CF6C; /*Titulos, border sombra*/
+    /* --emerald: #44CF6C; Titulos, border sombra */
     --honeydew: #F1FFE7; /*Background*/
     --lightgreen: #A9FDAC; /*Subtitulos - Botones*/
     --zomp: #32A287;
@@ -15,6 +15,15 @@
     --white: #FFF;
     --rojo: #DC3545; /*Alertas*/
     --naranja: #FFA500;
+    --verde-azulejo: #00B080; /*btn__plan-emerald*/
+    --emerald: #529649;
+    --text-color: #333;
+    /*
+    --platinum: #e5e5e5;
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --eggplant: #614051;
+    */
 }
 /*Para ajustar la medida de los rem en px*/
 html {

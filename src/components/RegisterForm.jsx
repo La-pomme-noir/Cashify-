@@ -20,6 +20,7 @@ export const RegisterForm = () => {
     handleSubmit,
     handleGoogleRegister,
     handlePasswordChange,
+    handleRecaptchaV2,
     closeAlert,
   } = RegisterLogic();
 
@@ -41,6 +42,7 @@ export const RegisterForm = () => {
       closeAlert={closeAlert}
       passwordCriteria={passwordCriteria}
       passwordStrength={passwordStrength}
+      handleRecaptchaV2={handleRecaptchaV2}
     />
   );
 };

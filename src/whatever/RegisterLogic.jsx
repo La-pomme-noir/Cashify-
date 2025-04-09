@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { auth } from '../services/firebase';
+import { auth, functions, httpsCallable } from '../services/firebase';
 import { saveUserData, determineRole, isEmailRegistered } from '../services/dbService';
 
 export const RegisterLogic = () => {
@@ -20,6 +20,7 @@ export const RegisterLogic = () => {
     specialChar: false,
   });
   const [passwordStrength, setPasswordStrength] = useState('');
+  const [recaptchaToken, setRecaptchaToken] = useState(null); // Estado para el token de reCAPTCHA
   const navigate = useNavigate();
 
   const validatePassword = (password) => {
@@ -45,6 +46,10 @@ export const RegisterLogic = () => {
     validatePassword(newPassword);
   };
 
+  const handleRecaptchaV2 = (token) => {
+    setRecaptchaToken(token);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -62,14 +67,32 @@ export const RegisterLogic = () => {
       return;
     }
 
-    const isRegistered = await isEmailRegistered(email);
-    if (isRegistered) {
-      setError('Este correo ya está registrado. Por favor, inicia sesión.');
+    if (!recaptchaToken) {
+      setError('Por favor, completa el desafío de reCAPTCHA.');
       setShowAlert(true);
       return;
     }
 
     try {
+      // Verificar reCAPTCHA v2
+      const verifyReCaptchaV2 = httpsCallable(functions, 'verifyReCaptchaV2');
+      const v2Result = await verifyReCaptchaV2({ token: recaptchaToken });
+
+      if (!v2Result.data.success) {
+        setError('Fallo en la verificación de reCAPTCHA v2.');
+        setShowAlert(true);
+        setRecaptchaToken(null); // Resetear el token
+        return;
+      }
+
+      const isRegistered = await isEmailRegistered(email);
+      if (isRegistered) {
+        setError('Este correo ya está registrado. Por favor, inicia sesión.');
+        setShowAlert(true);
+        setRecaptchaToken(null);
+        return;
+      }
+
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       const role = determineRole(email);
@@ -82,6 +105,7 @@ export const RegisterLogic = () => {
       setEmail('');
       setPassword('');
       setTermsAccepted(false);
+      setRecaptchaToken(null); // Resetear el token tras éxito
       setPasswordCriteria({
         length: false,
         uppercase: false,
@@ -91,6 +115,7 @@ export const RegisterLogic = () => {
       });
       setPasswordStrength('');
     } catch (err) {
+      setRecaptchaToken(null);
       if (err.code === 'auth/email-already-in-use') {
         setError('Este correo ya está registrado. Por favor, inicia sesión.');
       } else {
@@ -101,8 +126,28 @@ export const RegisterLogic = () => {
   };
 
   const handleGoogleRegister = async () => {
-    const provider = new GoogleAuthProvider();
+    setError('');
+    setSuccess('');
+
+    if (!recaptchaToken) {
+      setError('Por favor, completa el desafío de reCAPTCHA.');
+      setShowAlert(true);
+      return;
+    }
+
     try {
+      // Verificar reCAPTCHA v2
+      const verifyReCaptchaV2 = httpsCallable(functions, 'verifyReCaptchaV2');
+      const v2Result = await verifyReCaptchaV2({ token: recaptchaToken });
+
+      if (!v2Result.data.success) {
+        setError('Fallo en la verificación de reCAPTCHA v2.');
+        setShowAlert(true);
+        setRecaptchaToken(null);
+        return;
+      }
+
+      const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
@@ -111,6 +156,7 @@ export const RegisterLogic = () => {
         await auth.signOut();
         setError('Este correo ya está registrado con Google. Por favor, inicia sesión.');
         setShowAlert(true);
+        setRecaptchaToken(null);
         return;
       }
 
@@ -121,7 +167,9 @@ export const RegisterLogic = () => {
       setSuccess(`Registro exitoso con Google! Por favor, inicia sesión.`);
       setShowAlert(true);
       setTimeout(() => navigate('/login'), 2000);
+      setRecaptchaToken(null);
     } catch (err) {
+      setRecaptchaToken(null);
       if (err.code === 'auth/email-already-in-use') {
         setError('Este correo ya está registrado con Google. Por favor, inicia sesión.');
       } else {
@@ -150,6 +198,7 @@ export const RegisterLogic = () => {
     handleSubmit,
     handleGoogleRegister,
     handlePasswordChange,
+    handleRecaptchaV2,
     closeAlert,
   };
 };
