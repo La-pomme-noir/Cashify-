@@ -13,7 +13,7 @@
 @media (min-width: 768px) {
     .login {
         grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 10rem !important; 
+        margin-bottom: 10rem;
     }
 }
 .login__title,
@@ -105,53 +105,3 @@
 .check__terms {
     margin: 1rem;
 }
-/* Password */
-.password__criteria {
-    margin-top: 10px;
-    font-size: 1.4rem;
-  }
-  
-  .criteria__title {
-    font-weight: bold;
-    color: var(--black);
-  }
-  
-  .criteria__list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .criteria__list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: .5rem;
-  }
-  
-  .criteria__met {
-    color: var(--seagreen);
-  }
-  
-  .criteria__not--met {
-    color: var(--red);
-  }
-  
-  .criteria-list i {
-    margin-right: 1rem;
-  }
-  /* Fortaleza password */
-  .password__strength {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .strength-débil {
-    color: var(--red);
-  }
-  
-  .strength-media {
-    color: var(--naranja);
-  }
-  
-  .strength-fuerte {
-    color: var(--seagreen);
-  }

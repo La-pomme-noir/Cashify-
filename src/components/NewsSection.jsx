@@ -6,8 +6,8 @@ export const NewsSection = () => {
       <div className="bg__contenedor">
         <h1 className="bg__title">Sección Noticias</h1>
         <p className="bg__content">
-        ✨ ¡Bienvenido a la Sección de Noticias Financieras de Cashify! ✨ 
-        Mantente informado sobre las tendencias más recientes, los análisis más detallados y los eventos clave que moldean el panorama financiero global.
+          ¡Bienvenido a la sección de noticias financieras de Cashify! Aquí encontrarás toda la información que necesitas para estar al tanto de las últimas
+          tendencias, análisis y eventos del mundo financiero.
         </p>
       </div>
     </section>
