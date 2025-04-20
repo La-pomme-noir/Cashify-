@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, setPersistence, browserSessionPersistence } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { getFunctions, httpsCallable } from "firebase/functions";
@@ -26,3 +26,12 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export { functions, httpsCallable };
+
+// Configurar la persistencia de la sesión para que expire al cerrar el navegador
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    console.log("Persistencia de sesión configurada a 'session'");
+  })
+  .catch((error) => {
+    console.error("Error al configurar la persistencia:", error);
+  });

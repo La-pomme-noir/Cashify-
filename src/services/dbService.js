@@ -30,7 +30,7 @@ export const isEmailRegistered = async (email) => {
 
 export const determineRole = (email) => {
   const domain = email.split('@')[1]?.toLowerCase();
-  if (domain === 'cashify.com') return 'administrador';
-  if (domain === 'oradorcashify.com') return 'orador';
+  if (domain === 'cashify.lat') return 'administrador';
+  if (domain === 'oradorcashify.lat') return 'orador';
   return 'usuario';
 };
