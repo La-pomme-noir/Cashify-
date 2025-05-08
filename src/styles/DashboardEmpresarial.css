@@ -1,0 +1,244 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #e0f5eb;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --bg-light: #f9f9f9;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --card-radius: 12px;
+    --transition-fast: 0.3s ease;
+  }
+  
+  .dashboard-empresarial {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    padding: 2rem 1rem;
+    color: var(--text-dark);
+  }
+  
+  .dashboard-empresarial h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-empresarial p.description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .dashboard-empresarial .dashboard-section {
+    background-color: white;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-empresarial .section-title {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Métricas */
+  .metric-card {
+    background-color: var(--secondary-color);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+  
+  /* Botones de descarga */
+  .download-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .download-btn:hover {
+    background-color: #00563f;
+  }
+  
+  /* Videos */
+  .dashboard__videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .video-card {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+  }
+  
+  .video-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .video-frame iframe {
+    border: none;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+  }
+  
+  /* Chat */
+  .chat-card {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+  }
+  
+  .chat-mensajes {
+    max-height: 250px;
+    overflow-y: auto;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+  }
+  
+  .chat-form {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .chat-form input {
+    flex: 1;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .chat-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .chat-form button:hover {
+    background-color: #00563f;
+  }
+  
+  /* Tabla */
+  .conference-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+  }
+  
+  .conference-table th,
+  .conference-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .conference-table th {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .conference-table tr:nth-child(even) {
+    background-color: var(--bg-light);
+  }
+  .conference-list {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+  }
+  
+  .conference-list h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #007b5e;
+  }
+  
+  .conference-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .conference-list li {
+    background: #f1fdf5;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #38cf65;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  .dashboard-empresarial {
+    margin-top: 2rem;
+  }
+  
+  .dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  /* Reutilizamos las clases de conferencias */
+  .conference-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+  
+  .conference-item {
+    background-color: var(--ghostwhite);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .conference-item strong {
+    font-size: 2rem;
+    color: var(--seagreen);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .conference-item span {
+    font-size: 1.6rem;
+    color: var(--black);
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+  
+  .conference-item a {
+    color: var(--emerald);
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  

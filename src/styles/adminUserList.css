@@ -1,0 +1,41 @@
+.admin-users {
+    margin-top: 1.5rem;
+  }
+  
+  .toggle-btn {
+    background-color: #38cf65;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #2eac52;
+  }
+  
+  .user-table-container {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #f8f9fa;
+  }
+  

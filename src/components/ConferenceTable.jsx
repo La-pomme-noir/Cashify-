@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/Dashboard-conferences.css"; // asegúrate que esté importado
 
 const ConferenceTable = () => (
-  <section className="dashboard__section">
-    <h2 className="section-title">Próximas conferencias</h2>
+  <section className="shadow-cards contenedor">
+    <h2 className="titles-sections">Próximas Conferencias</h2>
+
     <div className="conference-table-container">
       <table className="conference-table">
-
         <thead>
           <tr>
             <th>Fecha</th>
@@ -20,16 +21,14 @@ const ConferenceTable = () => (
             <td>Fintech & IA</td>
             <td>Descubre el futuro de las finanzas inteligentes.</td>
           </tr>
-          
           <tr>
             <td>15 Abril</td>
             <td>Ciberseguridad</td>
             <td>Protegiendo datos en el nuevo mundo digital.</td>
           </tr>
         </tbody>
-
       </table>
-    </div> {/* Fin conference-table-container */}
+    </div>
   </section>
 );
 

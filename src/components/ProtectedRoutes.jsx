@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import { db } from '../services/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
-const ProtectedRoutes = ({ children, requireAdmin = false }) => {
+const Protected = ({ children, requireAdmin = false }) => {
   const { currentUser } = useContext(AuthContext);
   const [userRole, setUserRole] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ const ProtectedRoutes = ({ children, requireAdmin = false }) => {
           const userDocRef = doc(db, 'users', currentUser.uid);
           const userDoc = await getDoc(userDocRef);
           if (userDoc.exists()) {
-            setUserRole(userDoc.data().role);
+            setUserRole(userDoc.data().role); // Asegúrate que sea "admin" o "user"
           }
         } catch (error) {
           console.error('Error al obtener el rol del usuario:', error.message);
@@ -32,18 +32,15 @@ const ProtectedRoutes = ({ children, requireAdmin = false }) => {
     return <div>Cargando...</div>;
   }
 
-  // Si el usuario no está autenticado, redirigir a /login
   if (!currentUser) {
     return <Navigate to="/login" />;
   }
 
-  // Si la ruta requiere rol de administrador y el usuario no lo tiene, redirigir a /news
-  if (requireAdmin && userRole !== 'administrador') {
-    return <Navigate to="/news" />;
+  if (requireAdmin && userRole !== 'admin') { // aquí unificamos
+    return <Navigate to="/login" />;
   }
 
-  // Si pasa todas las verificaciones, renderizar el componente hijo
   return children;
 };
 
-export default ProtectedRoutes;
+export default Protected;

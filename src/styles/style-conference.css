@@ -1,251 +1,269 @@
-@import url('global.css');
+
 
 :root {
-    --primary-color: #75cf90;
-    --secondary-color: #b5ee9b;
-    --dark-color: #1A1A1A;
-    --light-color: #f8f9fa;
-  }
-  
-  /* Contenedor general */
-  .conference-container {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
-    background-color: var(--light-color);
-    padding: 2rem 1rem;
-  }
-  
-  /* SECCIÓN BIENVENIDA */
-  .welcome-section {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: var(--white);
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  }
-  
-  .welcome-section h1 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-  }
-  
-  .welcome-section p {
-    margin: 1rem auto;
-    max-width: 600px;
-    font-size: 1.1rem;
-  }
-  
-  /* Botones */
-  .btn-group {
-    margin-top: 1.5rem;
-  }
-  
-  .primary-btn,
-  .secondary-btn,
-  .outline-btn,
-  .filled-btn {
-    padding: 0.7rem 1.5rem;
-    font-weight: 600;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 0.5rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .primary-btn {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .primary-btn:hover {
-    background-color: #574fd6;
-  }
-  
-  .secondary-btn {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-  }
-  
-  .secondary-btn:hover {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  /* GALERÍA */
-  .gallery-section {
-    margin: 3rem 0;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
-  }
-  
-  .gallery-item {
-    background-color: #e0e0e0;
-    height: 120px;
-    border-radius: 10px;
-  }
-  
-  /* VIDEOLLAMADAS */
-  .video-call-section {
-    margin: 3rem 0;
-    text-align: center;
-  }
-  
-  .videos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .videos video {
-    width: 300px;
-    height: 200px;
-    background-color: black;
-    border-radius: 12px;
-    border: 2px solid var(--primary-color);
-  }
-  
-  /* Controles */
-  .call-controls {
-    margin-top: 1.5rem;
-  }
-  
-  .call-controls input {
-    padding: 0.5rem;
-    margin: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 250px;
-  }
-  
-  .call-controls button {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  .call-controls button:hover {
-    background-color: #009e8c;
-  }
-  
-  /* INFO BANNER */
-  .info-banner {
-    text-align: center;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 3rem 1rem;
-    border-radius: 10px;
-    margin: 3rem 0;
-  }
-  
-  .info-banner h2 {
-    font-size: 2rem;
-  }
-  
-  .info-banner button {
-    margin-top: 1rem;
-  }
-  
-  /* PLANES DE PRECIO */
-  .pricing-plan {
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  .pricing-plan h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-  }
-  
-  .pricing-plan p {
-    margin-bottom: 2rem;
-  }
-  
-  .plan-toggle button {
-    margin: 0 0.5rem;
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #eaeaea;
-    cursor: pointer;
-  }
-  
-  .plan-toggle button:hover {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .plans {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .plan {
-    background-color: white;
-    border-radius: 12px;
-    padding: 2rem;
-    width: 280px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  .plan.popular {
-    border: 2px solid var(--primary-color);
-  }
-  
-  .plan h3 {
-    color: var(--primary-color);
-  }
-  
-  .price {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 1rem 0;
-  }
-  
-  /* Lista de beneficios */
-  .plan ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-  }
-  
-  .plan li {
-    margin: 0.5rem 0;
-  }
-  
-  /* Botones dentro del plan */
-  .outline-btn {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-  }
-  
-  .outline-btn:hover {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .filled-btn {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .filled-btn:hover {
-    background-color: #574fd6;
-  }
-  
+  --primary-color: #75cf90;
+  --secondary-color: #b5ee9b;
+  --dark-color: #1A1A1A;
+  --light-color: #f8f9fa;
+  --white: #ffffff;
+  --text-color: #222;
+}
+
+/* ========== GENERALES ========== */
+body {
+  background-color: var(--light-color);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========== CONTENEDOR GENERAL ========== */
+.conference-container,
+.conferences-public {
+  padding: 2rem 1rem;
+}
+
+/* ========== SECCIÓN BIENVENIDA ========== */
+.welcome-section,
+.welcome-section-public {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-section h1,
+.welcome-section-public h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+}
+
+.welcome-section p,
+.welcome-section-public p {
+  margin: 1rem auto;
+  max-width: 700px;
+  font-size: 1.1rem;
+}
+
+/* ========== BOTONES ========== */
+.primary-btn,
+.secondary-btn,
+.outline-btn,
+.filled-btn,
+.primary-btn-public,
+.outline-btn-public,
+.filled-btn-public {
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn,
+.filled-btn,
+.filled-btn-public {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover,
+.filled-btn:hover,
+.filled-btn-public:hover {
+  background-color: #2eac52;
+}
+
+.secondary-btn,
+.outline-btn,
+.outline-btn-public {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover,
+.outline-btn:hover,
+.outline-btn-public:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn-public {
+  background: white;
+  color: var(--primary-color);
+}
+
+.primary-btn-public:hover {
+  background-color: #dfffea;
+}
+
+/* ========== GALERÍA ========== */
+.gallery-section-public h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 2rem 0 1rem;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel .control-arrow {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.carousel .control-arrow:hover {
+  background: rgba(56, 207, 101, 0.8);
+}
+
+.carousel .legend-public {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 0 0 10px 10px;
+}
+
+/* ========== VIDEOLLAMADAS ========== */
+.video-call-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.videos video {
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+}
+
+.call-controls {
+  margin-top: 1.5rem;
+}
+
+.call-controls input {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.call-controls button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.call-controls button:hover {
+  background-color: #009e8c;
+}
+
+/* ========== INFO BANNER ========== */
+.info-banner,
+.info-banner-public {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 1rem;
+  border-radius: 10px;
+  margin: 3rem 0;
+}
+
+.info-banner h2,
+.info-banner-public h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ========== PLANES DE PRECIO ========== */
+.pricing-plan,
+.pricing-plan-public {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.pricing-plan h2,
+.pricing-plan-public h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+
+.pricing-plan p,
+.pricing-plan-public p {
+  margin-bottom: 2rem;
+}
+
+.plans,
+.plans-public {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.plan,
+.plan-card-public {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 280px;
+  text-align: center;
+}
+
+.plan.popular,
+.plan-card-public.popular-public {
+  border: 2px solid var(--primary-color);
+}
+
+.plan h3,
+.plan-card-public h3 {
+  color: var(--primary-color);
+}
+
+.price,
+.plan-price-public {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #444;
+}
+
+.plan ul,
+.plan-card-public ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.plan li,
+.plan-card-public li {
+  margin-bottom: 0.5rem;
+}

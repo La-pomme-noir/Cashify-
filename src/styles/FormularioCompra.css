@@ -1,0 +1,120 @@
+.compra-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f5fff5;
+  }
+  
+  .resumen-compra, .formulario-pago {
+    flex: 1 1 400px;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+  }
+  
+  h2, h3 {
+    color: #2e2e2e;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    color: #28a745;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .detalle-plan, .linea-precio {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+  }
+  
+  .linea-precio.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-top: 1px solid #ccc;
+    padding-top: 0.5rem;
+  }
+  
+  .promo button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .promo button:hover {
+    background-color: #218838;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, select {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .tarjeta-inputs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .tarjeta-inputs input {
+    flex: 1 1 30%;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-comprar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .btn-comprar:hover {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    .compra-form-container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .resumen-compra, .formulario-pago {
+      max-width: 100%;
+    }
+  
+    .tarjeta-inputs {
+      flex-direction: column;
+    }
+  
+    .tarjeta-inputs input {
+      flex: 1 1 100%;
+    }
+  }
+  

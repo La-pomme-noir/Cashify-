@@ -1,0 +1,236 @@
+:root {
+    --admin-primary: #2d3748;
+    --admin-secondary: #4a5568;
+    --admin-accent: #38b2ac;
+    --admin-bg: #f7fafc;
+    --admin-white: #ffffff;
+    --admin-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  .admin-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .admin-header h1 {
+    font-size: 2.4rem;
+    color: #2eac52;
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-header p {
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .dashboard-admin {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--admin-bg);
+    padding: 2rem;
+  }
+  
+  .dashboard-admin h1 {
+    text-align: center;
+    color: var(--admin-primary);
+    margin-bottom: 2rem;
+  }
+  
+  .admin-section {
+    background-color: var(--admin-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--admin-shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .admin-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--admin-secondary);
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .admin-table th {
+    background-color: var(--admin-accent);
+    color: white;
+  }
+  
+  .admin-table tr:hover {
+    background-color: #edf2f7;
+  }
+  
+  .admin-btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    background-color: var(--admin-accent);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-btn:hover {
+    background-color: #319795;
+  }
+  .admin-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+  
+  .admin-form input,
+  .admin-form textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .admin-form button {
+    background-color: #38cf65;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .admin-section {
+    margin: 2rem auto;
+    max-width: 1100px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .conference-table-container {
+    overflow-x: auto;
+  }
+  
+  .conference-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .conference-table th,
+  .conference-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .conference-table th {
+    background-color: #38cf65;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .conference-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .conference-table input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  .conference-table button {
+    margin: 0 0.2rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #38cf65;
+    color: white;
+    transition: background-color 0.2s ease;
+  }
+  
+  .conference-table button:hover {
+    background-color: #2eac52;
+  }
+  /* Estilo general para botones de acción en la tabla */
+  .conference-table button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    margin: 0 4px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  /* Editar */
+  .conference-table button:nth-child(1) {
+    background-color: #007bff;
+    color: white;
+  }
+  .conference-table button:nth-child(1):hover {
+    background-color: #0056b3;
+  }
+  
+  /* Eliminar */
+  .conference-table button:nth-child(2) {
+    background-color: #dc3545;
+    color: white;
+  }
+  .conference-table button:nth-child(2):hover {
+    background-color: #a71d2a;
+  }
+  
+  /* Guardar */
+  .conference-table button:contains("Guardar") {
+    background-color: #28a745;
+    color: white;
+  }
+  .conference-table button:contains("Guardar"):hover {
+    background-color: #1e7e34;
+  }
+  
+  /* Cancelar */
+  .conference-table button:contains("Cancelar") {
+    background-color: #6c757d;
+    color: white;
+  }
+  .conference-table button:contains("Cancelar"):hover {
+    background-color: #495057;
+  }
+  
+  /* Inputs en modo edición */
+  .conference-table input {
+    padding: 0.3rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .admin-dashboard h1, 
+.admin-dashboard h2 {
+  font-family: var(--fuenteHeading);
+}
+
+.admin-dashboard p {
+  font-family: var(--fuenteParrafo);
+  font-size: 1.6rem;
+  color: var(--black);
+}

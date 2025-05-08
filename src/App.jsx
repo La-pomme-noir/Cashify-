@@ -11,56 +11,105 @@ import Register from "./pages/Register";
 import AdminNewsForm from "./pages/AdminNewsForm";
 import Conferences from "./pages/Conferences";
 import Dashboard from "./pages/DashboardConferences";
+import DashboardAdmin from "./pages/DashboardAdmin"; // ✅
+import DashboardBasico from "./pages/DashboardBasico"; // ✅ NUEVO
+import DashboardEmpresarial from "./pages/DashboardEmpresarial"; // ✅ NUEVO
+import DashboardCorporativo from "./pages/DashboardCorporativo"; // ✅ NUEVO
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import AutoRedirect from "./components/AutoRedirect"; // ✅
+import FormularioCompra from "./pages/FormularioCompra"; // ✅
+import { PayPalScriptProvider } from "@paypal/react-paypal-js"; // ✅ PayPal agregado
 import "./services/firebase";
 
 const AppRoutes = () => {
   useIdleTimeout();
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/news" element={<News />} />
-      <Route path="/qanda" element={<QandA />} />
-      <Route
-        path="/adminNews"
-        element={
-          <ProtectedRoutes requireAdmin={true}>
-            <AdminNewsForm />
-          </ProtectedRoutes>
-        }
-      />
-      <Route
-        path="/myspace"
-        element={
-          <ProtectedRoutes>
-            <MySpace />
-          </ProtectedRoutes>
-        }
-      />
-      <Route
-        path="/planning"
-        element={
-          <ProtectedRoutes>
-            <Planning />
-          </ProtectedRoutes>
-        }
-      />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/conferences" element={<Conferences />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-    </Routes>
+    <>
+      <AutoRedirect /> {/* ✅ Aquí montamos AutoRedirect */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/qanda" element={<QandA />} />
+        <Route
+          path="/adminNews"
+          element={
+            <ProtectedRoutes requireAdmin={true}>
+              <AdminNewsForm />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/myspace"
+          element={
+            <ProtectedRoutes>
+              <MySpace />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/planning"
+          element={
+            <ProtectedRoutes>
+              <Planning />
+            </ProtectedRoutes>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/conferences" element={<Conferences />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/formulario-compra" element={<FormularioCompra />} />
+
+        {/* ✅ Dashboard del Admin */}
+        <Route
+          path="/dashboard-admin"
+          element={
+            <ProtectedRoutes requireAdmin={true}>
+              <DashboardAdmin />
+            </ProtectedRoutes>
+          }
+        />
+
+        {/* ✅ Dashboards por tipo de plan */}
+        <Route
+          path="/dashboard-basico"
+          element={
+            <ProtectedRoutes>
+              <DashboardBasico />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/dashboard-empresarial"
+          element={
+            <ProtectedRoutes>
+              <DashboardEmpresarial />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/dashboard-corporativo"
+          element={
+            <ProtectedRoutes>
+              <DashboardCorporativo />
+            </ProtectedRoutes>
+          }
+        />
+      </Routes>
+    </>
   );
 };
 
 export const App = () => {
   return (
     <AuthProvider>
-      <Router>
-        <AppRoutes />
-      </Router>
+      <PayPalScriptProvider options={{ "client-id": "AQPAdKfm4bHYBhPa7oVBcauR8RTxUoVq4mTVY4PZQMzD23OqCoY829KkvobEkn2TP-4Bza95_cTUFlqz" }}> {/* ✅ Aquí envolvemos todo con PayPal */}
+        <Router>
+          <AppRoutes />
+        </Router>
+      </PayPalScriptProvider>
     </AuthProvider>
   );
 };

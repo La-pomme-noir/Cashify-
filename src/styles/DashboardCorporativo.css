@@ -1,0 +1,213 @@
+:root {
+    --corporativo-primary: #1c2b36;
+    --corporativo-accent: #00a97f;
+    --corporativo-bg: #f4f7f9;
+    --corporativo-card: #ffffff;
+    --corporativo-text: #333;
+    --corporativo-muted: #666;
+  }
+  
+  /* Contenedor general */
+  .dashboard-corporativo {
+    background-color: var(--corporativo-bg);
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--corporativo-text);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .dashboard-corporativo h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--corporativo-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .dashboard-corporativo p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    color: var(--corporativo-muted);
+  }
+  
+  /* Secciones */
+  .corporativo-section {
+    background-color: var(--corporativo-card);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--corporativo-accent);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Métricas */
+  .metric-card {
+    background-color: #f0f4f5;
+    padding: 1rem 1.5rem;
+    margin: 0.8rem 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+  
+  /* Botón de descarga */
+  .download-btn {
+    background-color: var(--corporativo-accent);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #00785e;
+  }
+  
+  /* Videoconferencias (usa los mismos estilos que RecentVideos si ya tienes CSS base) */
+  .dashboard__videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .video-card {
+    background: #eaeef0;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    text-align: center;
+  }
+  
+  .video-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #2b2b2b;
+  }
+  
+  .video-frame iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    border: none;
+  }
+  
+  /* Chat básico integrado */
+  .chat-card {
+    background-color: #f6fdfb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .chat-mensajes {
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 1rem;
+    border: 1px solid #d6e1dc;
+    background: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .chat-form {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .chat-form input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .chat-form button {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--corporativo-accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .chat-form button:hover {
+    background-color: #008c6a;
+  }
+  .conference-list {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+  }
+  
+  .conference-list h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #007b5e;
+  }
+  
+  .conference-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .conference-list li {
+    background: #f1fdf5;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #38cf65;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  .conference-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+  
+  .conference-item {
+    background-color: var(--ghostwhite);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .conference-item strong {
+    font-size: 2rem;
+    color: var(--seagreen);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .conference-item span {
+    font-size: 1.6rem;
+    color: var(--black);
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+  
+  .conference-item a {
+    color: var(--emerald);
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
