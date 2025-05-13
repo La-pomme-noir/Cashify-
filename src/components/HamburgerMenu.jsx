@@ -9,7 +9,8 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
   const [userRole, setUserRole] = useState(null);
   const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
   const [isMySpaceDropdownOpen, setIsMySpaceDropdownOpen] = useState(false);
-  
+  const [isConferencesDropdownOpen, setIsConferencesDropdownOpen] = useState(false);
+
   useEffect(() => {
     const fetchUserRole = async () => {
       try {
@@ -47,6 +48,10 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
     setIsMySpaceDropdownOpen(!isMySpaceDropdownOpen);
   };
 
+  const toggleConferencesDropdown = () => {
+    setIsConferencesDropdownOpen(!isConferencesDropdownOpen);
+  };
+
   return (
     <div className="hamburger__menu">
       <button className="hamburger__close" onClick={toggleMenu}>
@@ -69,7 +74,7 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
                 isNewsDropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'
               } dropdown-icon`}
             ></i>
-          </div>
+          </div> {/*Fin habmurguer__link news */}
           <div
             className={`hamburger__dropdown-menu ${
               isNewsDropdownOpen ? 'show' : ''
@@ -87,8 +92,8 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
                 Crear Noticia
               </Link>
             )}
-          </div>
-        </div>
+          </div> {/*Fin hamburguer__dropdown-menu news */}
+        </div> {/*Fin hamburguer__dropdown news*/}
 
         <Link to="/qanda" className="hamburger__link" onClick={toggleMenu}>
           Foro Financiero
@@ -117,10 +122,38 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
             </Link>
           </div>
         </div>
+        
+        {/* Opción de VideoConferencias con submenú para administradores */}
+        <div className="hamburger__dropdown">
+          <div className="hamburger__link" onClick={toggleConferencesDropdown}>
+            VideoConferencias
+            <i
+              className={`fa-solid ${
+                isConferencesDropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'
+              } dropdown-icon`}
+            ></i>
+          </div> {/*Fin hamburguer__link conferences */}
 
-        <Link to="/conferences" className="hamburger__link" onClick={toggleMenu}>
-          VideoConferencias
-        </Link>
+          <div
+            className={`hamburger__dropdown-menu ${
+              isConferencesDropdownOpen ? 'show' : ''
+            }`}
+          >
+            <Link to="/conferences" className="hamburger__link--dropdown hamburger__link" onClick={toggleMenu}>
+              Ver VideoConferencias
+            </Link>
+            {userRole === 'administrador' && (
+              <Link
+                to="/dashboard-admin"
+                className="hamburger__link--dropdown hamburger__link"
+                onClick={toggleMenu}
+              >
+                Panel VideoConferencias
+              </Link>
+            )}
+          </div> {/*Fin hamburguer__dropdown-menu conferences */}
+        </div> {/*Fin hamburguer__dropdown conferences*/}
+
         <button
           className="hamburger__link hamburger__logout"
           onClick={handleLogout}

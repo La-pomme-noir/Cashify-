@@ -1,20 +1,20 @@
 import React from 'react';
-import Navbar from '../components/Navbar'; 
+import Header from '../components/Header'; 
+import Footer from '../components/Footer'; 
 import AdminUserList from '../components/AdminUserList';
 import AdminPlanStats from '../components/AdminPlanStats';
 import AdminFeedbackReview from '../components/AdminFeedbackReview';
-import Header from '../components/Header'; 
-import Footer from '../components/Footer'; 
-import "../styles/global.css"; // 👈 IMPORTANTE: Estilos globales
-import "../styles/DashboardAdmin.css"; // (si quieres tener estilos admin específicos)
 import AdminAddConference from "../components/AdminAddConference";
 import AdminConferenceTable from "../components/AdminConferenceTable";
+import NavbarConfe from '../components/NavbarConfe';
+import "../styles/global.css";
+import "../styles/DashboardAdmin.css";
 
 const DashboardAdmin = () => {
   return (
     <>
       <Header />
-      <Navbar />
+      <NavbarConfe />
 
       <div className="contenedor" style={{ padding: "2rem 1rem" }}>
         {/* Encabezado del dashboard */}

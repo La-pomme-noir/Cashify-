@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext"; // ← Asegúrate de que esta ruta es correcta
+import { useAuth } from "../context/AuthContext";
 
 const AdminRoute = ({ children }) => {
-  const { currentUser, userData } = useAuth(); // ← Esto asegura que userData sí esté definido
+  const { currentUser, userData } = useAuth();
 
-  if (!currentUser || userData?.role !== "admin") {
+  if (!currentUser || userData?.role !== "administrador") {
     return <Navigate to="/login" />;
   }
 

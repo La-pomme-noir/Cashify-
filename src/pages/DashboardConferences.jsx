@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from '../components/Header';
-import NavbarConferencias from '../components/NavbarConfe';
+import NavbarConfe from '../components/NavbarConfe';
 import Footer from '../components/Footer';
 import NewsDashboard from '../components/NewDashboard';
 import RecentVideos from '../components/Recentvideos';
@@ -72,7 +72,7 @@ const DashboardConferences = () => {
   return (
     <>
       <Header />
-      <NavbarConferencias />
+      <NavbarConfe />
       <div className="contenedor" style={{ padding: "2rem 1rem" }}>
         
         {/* Bienvenida */}

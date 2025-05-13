@@ -4,6 +4,7 @@ import useIdleTimeout from "./hooks/useIdleTimeout";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import QandA from "./pages/QandA";
+import AllQuestions from './pages/AllQuestionPage';
 import MySpace from "./pages/MySpace";
 import Planning from "./pages/Planning";
 import Login from "./pages/Login";
@@ -17,7 +18,7 @@ import DashboardEmpresarial from "./pages/DashboardEmpresarial"; // ✅ NUEVO
 import DashboardCorporativo from "./pages/DashboardCorporativo"; // ✅ NUEVO
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
-import AutoRedirect from "./components/AutoRedirect"; // ✅
+// import AutoRedirect from "./components/AutoRedirect";
 import FormularioCompra from "./pages/FormularioCompra"; // ✅
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"; // ✅ PayPal agregado
 import "./services/firebase";
@@ -27,11 +28,12 @@ const AppRoutes = () => {
 
   return (
     <>
-      <AutoRedirect /> {/* ✅ Aquí montamos AutoRedirect */}
+      {/* <AutoRedirect /> ✅ Aquí montamos AutoRedirect */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/qanda" element={<QandA />} />
+        <Route path="/all-questions" element={<AllQuestions />} />
         <Route
           path="/adminNews"
           element={

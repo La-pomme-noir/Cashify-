@@ -16,7 +16,7 @@ const Protected = ({ children, requireAdmin = false }) => {
           const userDocRef = doc(db, 'users', currentUser.uid);
           const userDoc = await getDoc(userDocRef);
           if (userDoc.exists()) {
-            setUserRole(userDoc.data().role); // Asegúrate que sea "admin" o "user"
+            setUserRole(userDoc.data().role);
           }
         } catch (error) {
           console.error('Error al obtener el rol del usuario:', error.message);
@@ -36,7 +36,7 @@ const Protected = ({ children, requireAdmin = false }) => {
     return <Navigate to="/login" />;
   }
 
-  if (requireAdmin && userRole !== 'admin') { // aquí unificamos
+  if (requireAdmin && userRole !== 'administrador') { 
     return <Navigate to="/login" />;
   }
 

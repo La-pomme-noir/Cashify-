@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
-import Navbar from "../components/Navbardashconf";
+import NavbarConfe from "../components/NavbarConfe";
 import Footer from "../components/Footer";
 import RecentVideos from "../components/Recentvideos";
 import ChatBasico from "../components/ChatBasico";
@@ -25,7 +25,7 @@ const DashboardCorporativo = () => {
   return (
     <>
       <Header />
-      <Navbar />
+      <NavbarConfe />
       <div className="dashboard-corporativo contenedor" style={{ padding: "2rem 1rem" }}>
 
         <section className="shadow-cards">

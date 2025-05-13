@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
-import Navbar from "../components/Navbardashconf";
+import NavbarConfe from "../components/NavbarConfe";
 import Footer from "../components/Footer";
 import RecentVideos from "../components/Recentvideos";
 import ChatBasico from "../components/ChatBasico";
@@ -26,7 +26,7 @@ const DashboardEmpresarial = () => {
   return (
     <>
       <Header />
-      <Navbar />
+      <NavbarConfe />
 
       <div className="dashboard-empresarial contenedor" style={{ padding: "2rem 1rem" }}>
         <section className="shadow-cards">
