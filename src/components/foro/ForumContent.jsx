@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../services/firebase';
+import { auth, db } from '../../services/firebase';
 import { doc, getDoc } from 'firebase/firestore';
-import { addQuestion, getLatestQuestion, incrementQuestionViews, addComment, getComments, toggleLike, setRating } from '../whatever/forumService';
-import '../styles/style-forumContent.css';
+import { addQuestion, getLatestQuestion, incrementQuestionViews, addComment, getComments, toggleLike, setRating } from '../../whatever/forumService';
+import '../../styles/style-forumContent.css';
 
 const ForumContent = () => {
   const [title, setTitle] = useState('');

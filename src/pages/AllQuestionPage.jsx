@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import NavbarForum from '../components/NavbarForum';
+import NavbarForum from '../components/foro/NavbarForum';
 import AllQuestions from '../components/AllQuestions';
 import Footer from '../components/Footer';
 import '../styles/style-qanda.css';

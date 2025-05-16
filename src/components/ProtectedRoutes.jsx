@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import { db } from '../services/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
-const Protected = ({ children, requireAdmin = false }) => {
+const Protected = ({ children, requireAdmin = false, requireOrador = false }) => {
   const { currentUser } = useContext(AuthContext);
   const [userRole, setUserRole] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -38,6 +38,10 @@ const Protected = ({ children, requireAdmin = false }) => {
 
   if (requireAdmin && userRole !== 'administrador') { 
     return <Navigate to="/login" />;
+  }
+
+  if (requireOrador && userRole !== 'orador') {
+    return <Navigate to={"/login"} />;
   }
 
   return children;

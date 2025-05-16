@@ -1,0 +1,13 @@
+@import url(global.css);
+@import url(normalize.css);
+
+/* Hero Foro */
+.bg__orador {
+    background-image: url("../assets/images/orador/heroOrador.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
+    position: relative;
+    margin-bottom: 2rem;
+}

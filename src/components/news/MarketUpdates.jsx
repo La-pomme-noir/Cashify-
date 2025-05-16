@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNewsLogic } from '../whatever/useNewsLogic';
-import NewsCarousel from '../view/NewsCarousel';
+import { useNewsLogic } from '../../whatever/useNewsLogic';
+import NewsCarousel from '../../view/NewsCarousel';
 
-const TrendsInversiones = ({ category }) => {
+const MarketUpdates = ({ category }) => {
   const { news, isModalOpen, selectedNews, openModal, closeModal } = useNewsLogic(category);
 
   return (
@@ -13,10 +13,10 @@ const TrendsInversiones = ({ category }) => {
       selectedNews={selectedNews}
       openModal={openModal}
       closeModal={closeModal}
-      sectionId="consejos"
+      sectionId="articulos"
       carouselId="carouselTarjetasMercado"
     />
   );
 };
 
-export default TrendsInversiones;
+export default MarketUpdates;

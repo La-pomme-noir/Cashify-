@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
-const NavbarForum = () => {
+const NavbarOrador = () => {
   const { currentUser } = useContext(AuthContext);
 
   return (
@@ -13,11 +13,11 @@ const NavbarForum = () => {
       <Link to="/news" className="navegacion__enlaces">
         Noticias
       </Link>
-      <Link to="/qanda" className="navegacion__enlaces navegacion__enlaces--activo">
+      <Link to="/qanda" className="navegacion__enlaces">
         Foro Financiero
       </Link>
-      <Link to="/myspace" className="navegacion__enlaces">
-        Mi Espacio
+      <Link to="/oradorhome" className="navegacion__enlaces navegacion__enlaces--activo">
+        Oradores
       </Link>
       <Link to="/conferences" className="navegacion__enlaces">
         VideoConferencias
@@ -37,4 +37,4 @@ const NavbarForum = () => {
   );
 };
 
-export default NavbarForum;
+export default NavbarOrador;

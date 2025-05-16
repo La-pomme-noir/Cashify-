@@ -10,6 +10,7 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
   const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
   const [isMySpaceDropdownOpen, setIsMySpaceDropdownOpen] = useState(false);
   const [isConferencesDropdownOpen, setIsConferencesDropdownOpen] = useState(false);
+  const [isOradoresDropdownOpen, setIsOradoresDropdownOpen] = useState(false);
 
   useEffect(() => {
     const fetchUserRole = async () => {
@@ -50,6 +51,10 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
 
   const toggleConferencesDropdown = () => {
     setIsConferencesDropdownOpen(!isConferencesDropdownOpen);
+  };
+
+  const toggleOradoresDropdown = () => {
+    setIsOradoresDropdownOpen(!isOradoresDropdownOpen);
   };
 
   return (
@@ -153,6 +158,34 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
             )}
           </div> {/*Fin hamburguer__dropdown-menu conferences */}
         </div> {/*Fin hamburguer__dropdown conferences*/}
+
+        {/* Opción de Oradores */}
+        <div className="hamburger__dropdown">
+          <div className="hamburger__link" onClick={toggleOradoresDropdown}>
+            Oradores
+            <i
+              className={`fa-solid ${
+                isOradoresDropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'
+              } dropdown-icon`}
+            ></i>
+          </div> {/*Fin hamburguer__link conferences */}
+
+          <div
+            className={`hamburger__dropdown-menu ${
+              isOradoresDropdownOpen ? 'show' : ''
+            }`}
+          >
+            {userRole === 'orador' && (
+              <Link
+                to="/oradorhome"
+                className="hamburger__link--dropdown hamburger__link"
+                onClick={toggleMenu}
+              >
+                Panel Oradores
+              </Link>
+            )}
+          </div> {/*Fin hamburguer__dropdown-menu oradores */}
+        </div> {/*Fin hamburguer__dropdown oradores*/}
 
         <button
           className="hamburger__link hamburger__logout"

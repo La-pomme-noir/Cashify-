@@ -1,21 +1,19 @@
 import React from 'react';
 import Header from '../components/Header';
-import NavbarForum from '../components/foro/NavbarForum';
+import NavbarOrador from '../components/oradores/NavbarOrador';
 import Footer from '../components/Footer';
-import ForumSection from '../components/foro/ForumSection';
-import RulesSection from '../components/foro/RulesSection';
-import ForumContent from '../components/foro/ForumContent';
-import QandASection from '../components/foro/QandASection';
-import '../styles/style-qanda.css';
+import OradorSection from '../components/oradores/OradorSection';
+import RulesOrador from '../components/oradores/RulesOrador';
+import '../styles/style-orador.css';
 
-const QandA = () => {
+const OradorHome = () => {
   return (
     <div>
       <Header />
-      <NavbarForum />
-      <ForumSection />
+      <NavbarOrador />
+      <OradorSection />
       <main className="contenedor">
-        <nav id="navbar-finanzas" className="navbar px-3 mb-3 sticky-top navbar__finanzas">
+        <nav id="navbar-orador" className="navbar px-3 mb-3 sticky-top navbar__finanzas">
           <ul className="nav nav-tabs">
             <li className="nav-item">
               <a className="nav-link active navbar__links" href="#reglas">
@@ -24,26 +22,24 @@ const QandA = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link navbar__links" href="#foro">
-                Foro
+                Aportar
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link navbar__links" href="#answer">
-                Q&A
+                Revisar
               </a>
             </li>
           </ul>
         </nav>
         <div
           data-bs-spy="scroll"
-          data-bs-target="#navbar-finanzas"
+          data-bs-target="#navbar-orador"
           data-bs-smooth-scroll="true"
           className="scrollspy-example bg-body-tertiary p-3 content__scrollspy shadow-cards"
           tabIndex="0"
         >
-          <RulesSection />
-          <ForumContent />
-          <QandASection />
+          <RulesOrador />
         </div>
       </main>
       <Footer />
@@ -51,4 +47,4 @@ const QandA = () => {
   );
 };
 
-export default QandA;
+export default OradorHome;

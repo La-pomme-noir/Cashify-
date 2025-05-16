@@ -4,7 +4,7 @@ import useIdleTimeout from "./hooks/useIdleTimeout";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import QandA from "./pages/QandA";
-import AllQuestions from './pages/AllQuestionPage';
+import AllQuestions from "./pages/AllQuestionPage";
 import MySpace from "./pages/MySpace";
 import Planning from "./pages/Planning";
 import Login from "./pages/Login";
@@ -16,6 +16,7 @@ import DashboardAdmin from "./pages/DashboardAdmin"; // ✅
 import DashboardBasico from "./pages/DashboardBasico"; // ✅ NUEVO
 import DashboardEmpresarial from "./pages/DashboardEmpresarial"; // ✅ NUEVO
 import DashboardCorporativo from "./pages/DashboardCorporativo"; // ✅ NUEVO
+import OradorHome from "./pages/OradorHome";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 // import AutoRedirect from "./components/AutoRedirect";
@@ -55,6 +56,14 @@ const AppRoutes = () => {
           element={
             <ProtectedRoutes>
               <Planning />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/oradorhome"
+          element={
+            <ProtectedRoutes requireOrador={true}>
+              <OradorHome />
             </ProtectedRoutes>
           }
         />
@@ -107,7 +116,14 @@ const AppRoutes = () => {
 export const App = () => {
   return (
     <AuthProvider>
-      <PayPalScriptProvider options={{ "client-id": "AQPAdKfm4bHYBhPa7oVBcauR8RTxUoVq4mTVY4PZQMzD23OqCoY829KkvobEkn2TP-4Bza95_cTUFlqz" }}> {/* ✅ Aquí envolvemos todo con PayPal */}
+      <PayPalScriptProvider
+        options={{
+          "client-id":
+            "AQPAdKfm4bHYBhPa7oVBcauR8RTxUoVq4mTVY4PZQMzD23OqCoY829KkvobEkn2TP-4Bza95_cTUFlqz",
+        }}
+      >
+        {" "}
+        {/* ✅ Aquí envolvemos todo con PayPal */}
         <Router>
           <AppRoutes />
         </Router>

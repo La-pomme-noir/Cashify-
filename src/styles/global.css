@@ -107,6 +107,35 @@ img {
     padding: 1rem;
     border-radius: .5rem;
 }
+/* Scrollspy */
+.navbar__finanzas {
+    background-color: var(--emerald);
+    border-radius: .5rem;
+}
+.navbar__links {
+    color: var(--black);
+}
+.navbar__links:hover {
+    color: var(--platinum);
+}
+/* SCROLLSPY SECCIÓN REGLAS FORO-ORADOR */
+.shadow__cards-rules {
+    background-color: var(--platinum);
+}
+.scrollspy__li {
+    list-style: none;
+}
+.scrollspy__span {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    margin: 1rem;
+    font-size: 2rem;
+}
+.scrollspy__span-reglas {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
 /* Header */
 .header {
     display: flex;

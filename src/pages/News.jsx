@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../components/Header';
-import NavbarNews from '../components/NavbarNews';
+import NavbarNews from '../components/news/NavbarNews';
 import Footer from '../components/Footer';
-import NewsSection from '../components/NewsSection';
+import NewsSection from '../components/news/NewsSection';
 import FeaturedNews from '../whatever/FeaturedNews';
-import TrendsCarousel from '../components/TrendsCarousel';
-import MarketUpdates from '../components/MarketUpdates';
-import TrendsGestion from '../components/TrendsGestion';
-import TrendsInversiones from '../components/TrendsInversiones';
+import TrendsCarousel from '../components/news/TrendsCarousel';
+import MarketUpdates from '../components/news/MarketUpdates';
+import TrendsGestion from '../components/news/TrendsGestion';
+import TrendsInversiones from '../components/news/TrendsInversiones';
 import '../styles/style-news.css';
 
 const News = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useNewsLogic } from '../whatever/useNewsLogic';
-import NewsCarousel from '../view/NewsCarousel';
+import { useNewsLogic } from '../../whatever/useNewsLogic';
+import NewsCarousel from '../../view/NewsCarousel';
 
 export const TrendsCarousel = ({ category }) => {
   const { news, isModalOpen, selectedNews, openModal, closeModal } = useNewsLogic(category);

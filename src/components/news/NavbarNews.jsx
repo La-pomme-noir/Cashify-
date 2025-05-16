@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
-const NavbarMySpace = () => {
+const NavbarNews = () => {
   const { currentUser } = useContext(AuthContext);
 
   return (
@@ -10,13 +10,13 @@ const NavbarMySpace = () => {
       <Link to="/" className="navegacion__enlaces">
         Inicio
       </Link>
-      <Link to="/news" className="navegacion__enlaces">
+      <Link to="/news" className="navegacion__enlaces navegacion__enlaces--activo">
         Noticias
       </Link>
       <Link to="/qanda" className="navegacion__enlaces">
         Foro Financiero
       </Link>
-      <Link to="/myspace" className="navegacion__enlaces navegacion__enlaces--activo">
+      <Link to="/myspace" className="navegacion__enlaces">
         Mi Espacio
       </Link>
       <Link to="/conferences" className="navegacion__enlaces">
@@ -37,4 +37,4 @@ const NavbarMySpace = () => {
   );
 };
 
-export default NavbarMySpace;
+export default NavbarNews;
