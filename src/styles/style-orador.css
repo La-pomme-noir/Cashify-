@@ -11,3 +11,215 @@
     position: relative;
     margin-bottom: 2rem;
 }
+.speaker-ideas {
+  font-family: var(--fuenteParrafo);
+  background-color: var(--honeydew);
+  min-height: 100vh;
+}
+.speaker-ideas__title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.speaker-ideas__new-button {
+  background-color: var(--emerald);
+  color: var(--black);
+  padding: 1.2rem 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.speaker-ideas__new-button:hover {
+  background-color: var(--seagreen);
+}
+
+/* Modal */
+.speaker-ideas__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 7, 7, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.speaker-ideas__modal-content {
+  background-color: var(--ghostwhite);
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1.2rem rgba(7, 7, 7, 0.1);
+  padding: 4rem;
+  max-width: 60rem;
+  width: 90%;
+  position: relative;
+}
+
+.speaker-ideas__modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.speaker-ideas__modal-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Form */
+.speaker-ideas__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.speaker-ideas__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.speaker-ideas__form-label {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.speaker-ideas__form-input,
+.speaker-ideas__form-select,
+.speaker-ideas__form-textarea {
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  border: 0.1rem solid var(--platinum);
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.speaker-ideas__form-input:focus,
+.speaker-ideas__form-select:focus,
+.speaker-ideas__form-textarea:focus {
+  border-color: var(--emerald);
+  outline: none;
+  box-shadow: 0 0 0.5rem rgba(82, 150, 73, 0.2);
+}
+
+.speaker-ideas__form-textarea {
+  resize: vertical;
+  min-height: 10rem;
+}
+
+.speaker-ideas__form-select {
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.speaker-ideas__form-submit {
+  background-color: var(--emerald);
+  color: var(--black);
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.speaker-ideas__form-submit:hover {
+  background-color: var(--seagreen);
+}
+
+/* Table */
+.speaker-ideas__table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--ghostwhite);
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(7, 7, 7, 0.1);
+  overflow: hidden;
+}
+
+.speaker-ideas__table th,
+.speaker-ideas__table td {
+  padding: 1.2rem;
+  text-align: left;
+  border-bottom: 0.1rem solid var(--platinum);
+}
+
+.speaker-ideas__table th {
+  background-color: var(--seagreen);
+  color: var(--platinum);
+  font-weight: 600;
+}
+
+.speaker-ideas__table-action {
+  color: var(--black);
+  cursor: pointer;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+}
+
+.speaker-ideas__table-action:hover {
+  color: var(--seagreen);
+}
+
+.speaker-ideas__empty {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--black);
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 76.8rem) {
+  .speaker-ideas__container {
+    padding: 1rem;
+  }
+
+  .speaker-ideas__title {
+    font-size: 1.5rem;
+  }
+
+  .speaker-ideas__modal-content {
+    padding: 2rem;
+    width: 95%;
+  }
+
+  .speaker-ideas__modal-title {
+    font-size: 1.2rem;
+  }
+
+  .speaker-ideas__form-input,
+  .speaker-ideas__form-select,
+  .speaker-ideas__form-textarea {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .speaker-ideas__form-submit,
+  .speaker-ideas__new-button {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .speaker-ideas__table {
+    font-size: 0.9rem;
+  }
+}

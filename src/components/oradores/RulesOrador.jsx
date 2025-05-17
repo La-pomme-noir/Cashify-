@@ -2,7 +2,7 @@ import React from 'react';
 
 const RulesOrador = () => {
   return (
-    <section id="reglas" className="mb-5 shadow-cards shadow__cards-rules">
+    <section id="reglasOrador" className="mb-5 shadow-cards shadow__cards-rules">
       <h2 className="titles-sections">Reglas para participar</h2>
       <span class="scrollspy__span">Nos alegra que formes parte de nuestra comunidad, donde el respeto y el aprendizaje mutuo son nuestras guías principales.</span>
       <ul class="scrollspy__foro">

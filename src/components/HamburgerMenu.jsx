@@ -175,6 +175,10 @@ const HamburgerMenu = ({ userName, toggleMenu }) => {
               isOradoresDropdownOpen ? 'show' : ''
             }`}
           >
+            {/* <Link to="/viewOradores" className="hamburger__link--dropdown hamburger__link" onClick={toggleMenu}>
+              Ver Oradores
+            </Link> */}
+
             {userRole === 'orador' && (
               <Link
                 to="/oradorhome"
