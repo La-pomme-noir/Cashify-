@@ -10,14 +10,16 @@ import { getFunctions, httpsCallable } from "firebase/functions";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+apiKey: "AIzaSyCpzIn\_rvcq0WNqV7TAvtuelIaN914H-ak",
+authDomain: "cashify-web.firebaseapp.com",
+databaseURL: "[https://cashify-web-default-rtdb.firebaseio.com](https://cashify-web-default-rtdb.firebaseio.com)",
+projectId: "cashify-web",
+storageBucket: "cashify-web.firebasestorage.app",
+messagingSenderId: "606152300455",
+appId: "1:606152300455\:web:38d25887bd50b50761c882",
+measurementId: "G-97J887BQCP"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
